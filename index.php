@@ -8,7 +8,7 @@
     <meta name="description"
         content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
     <meta name="keywords"
-        content="ilhomjonov, iqbolshoh, iqbolshoh ilhomjonov, ikromjonovich, iqbolshoh_777, programmer_777, software developer, full-stack developer, javascript developer, web developer, programmer, samarkand developer, uzbekistan developer, programming, web development, github projects, software engineer, dasturchi, programmist, dasturiy taminot, web dasturchi, iqbolshoh.uz, templates.uz">
+        content="ilhomjonov, iqbolshoh, iqbolshoh ilhomjonov, ikromjonovich, iqbolshoh_777, programmer_777, software developer, full-stack developer, javascript developer, web developer, programmer, samarkand developer, uzbekistan developer, programming, web development, github projects, software engineer, dasturchi, programmist, dasturiy taminot, web dasturchi, iqbolshoh.uz, templates.uz, +998997799333, 997799333">
 
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Iqbolshoh Ilhomjonov - Full-Stack Developer">
@@ -26,6 +26,7 @@
         content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
     <meta name="twitter:image" content="https://templates.uz/images/iqbolshoh-1.jpg">
     <meta name="twitter:site" content="@iqbolshoh_777">
+
 
     <meta name="author" content="Iqbolshoh Ilhomjonov">
     <meta name="robots" content="index, follow">
