@@ -14,8 +14,8 @@
     <meta property="og:title" content="Iqbolshoh Ilhomjonov - Full-Stack Developer">
     <meta property="og:description"
         content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
-    <meta property="og:image" content="https://iqbolshoh.uz/images/iqbolshoh-1.jpg">
-    <meta property="og:url" content="https://iqbolshoh.uz">
+    <meta property="og:image" content="https://templates.uz/images/iqbolshoh-1.jpg">
+    <meta property="og:url" content="https://templates.uz">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Iqbolshoh Ilhomjonov">
 
@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="Iqbolshoh Ilhomjonov - Full-Stack Developer">
     <meta name="twitter:description"
         content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
-    <meta name="twitter:image" content="https://iqbolshoh.uz/images/iqbolshoh-1.jpg">
+    <meta name="twitter:image" content="https://templates.uz/images/iqbolshoh-1.jpg">
     <meta name="twitter:site" content="@iqbolshoh_777">
 
     <meta name="author" content="Iqbolshoh Ilhomjonov">
