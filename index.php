@@ -19,7 +19,6 @@
 
     <meta name="robots" content="index, follow">
     <meta name="author" content="Iqbolshoh Ilhomjonov">
-    <link rel="canonical" href="https://templates.uz">
 
     <title>Iqbolshoh Ilhomjonov</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
