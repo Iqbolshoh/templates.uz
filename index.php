@@ -5,39 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
-    <meta name="keywords"
-        content="ilhomjonov, iqbolshoh, iqbolshoh ilhomjonov, ikromjonovich, iqbolshoh_777, programmer_777, software developer, full-stack developer, javascript developer, web developer, programmer, samarkand developer, uzbekistan developer, programming, web development, github projects, software engineer, dasturchi, programmist, dasturiy taminot, web dasturchi, iqbolshoh.uz, templates.uz, +998997799333, 997799333">
+    <meta name="description" content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
+    <meta name="keywords" content="ilhomjonov, iqbolshoh, iqbolshoh ilhomjonov, ikromjonovich, iqbolshoh_777, programmer_777, software developer, full-stack developer, javascript developer, web developer, programmer, samarkand developer, uzbekistan developer, programming, web development, github projects, software engineer, dasturchi, programmist, dasturiy taminot, web dasturchi, iqbolshoh.uz, templates.uz, +998997799333, 997799333">
 
-    <!-- Open Graph meta tags -->
     <meta property="og:title" content="Iqbolshoh Ilhomjonov - Full-Stack Developer">
-    <meta property="og:description"
-        content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
-    <meta property="og:image" content="https://templates.uz/images/iqbolshoh-1.jpg">
+    <meta property="og:description" content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
+    <meta property="og:image" content="./images/iqbolshoh-1.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
     <meta property="og:url" content="https://templates.uz">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Iqbolshoh Ilhomjonov">
 
-    <!-- Twitter Card meta tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Iqbolshoh Ilhomjonov - Full-Stack Developer">
-    <meta name="twitter:description"
-        content="Welcome to the website of Iqbolshoh, a Full-Stack Developer from Samarkand with 3+ years of experience. Specializing in web development. Contact me at +998997799333.">
-    <meta name="twitter:image" content="https://templates.uz/images/iqbolshoh-1.jpg">
-    <meta name="twitter:site" content="@iqbolshoh_777">
-
-
-    <meta name="author" content="Iqbolshoh Ilhomjonov">
     <meta name="robots" content="index, follow">
-    <meta name="application-name" content="Iqbolshoh's Website">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="author" content="Iqbolshoh Ilhomjonov">
+    <link rel="canonical" href="https://templates.uz">
 
     <title>Iqbolshoh Ilhomjonov</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
-
 
 <style>
     body {
