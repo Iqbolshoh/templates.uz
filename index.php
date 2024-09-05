@@ -21,7 +21,7 @@
     <meta property="og:site_name" content="Iqbolshoh Ilhomjonov">
 
     <title>Iqbolshoh Ilhomjonov</title>
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
 
