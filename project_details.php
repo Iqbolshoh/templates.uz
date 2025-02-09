@@ -106,7 +106,7 @@ if ($project) {
                   <li>
                     <strong>Link</strong>:
                     <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
-                      <?php echo str_replace(['https://', 'http://'], '', $project['link']); ?>
+                      <?php echo str_replace(['https://', 'http://', 'www.'], '', $project['link']); ?>
                     </a>
                   </li>
                 </ul>
