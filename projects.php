@@ -92,9 +92,11 @@ foreach ($projects as $project) {
                         alt="<?= $project['project_name'] ?>">
                       <div class="portfolio-info">
                         <h4><?= $project['project_name'] ?></h4>
-                        <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
-                          <?php echo str_replace(['https://', 'http://', 'www.'], '', $project['link']); ?>
-                        </a>
+                        <p>
+                          <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
+                            <?php echo str_replace(['https://', 'http://', 'www.'], '', $project['link']); ?>
+                          </a>
+                        </p>
                       </div>
                     </a>
                   </div>
