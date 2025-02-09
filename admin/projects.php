@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 // project addition process
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add') {
     $project_name = $_POST['project_name'];
+    $link = $_POST['link'];
     $description = $_POST['description'];
     $category_id = $_POST['category_id'];
 
@@ -48,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         }
 
         if (!empty($uploadedImages)) {
-            $query->eQuery('INSERT INTO projects (project_name, description, category_id) VALUES (?, ?, ?)', [$project_name, $description, $category_id]);
+            $query->eQuery('INSERT INTO projects (project_name, link, description, category_id) VALUES (?, ?, ?)', [$project_name, $link, $description, $category_id]);
 
             $project_id = $query->lastInsertId();
 
@@ -159,6 +160,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                     <label for="project_name">Project Name</label>
                                                     <input type="text" class="form-control" name="project_name"
                                                         id="projectName" maxlength="255" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="link">Link</label>
+                                                    <input type="text" class="form-control" name="link"
+                                                        id="link" maxlength="255" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="description">Description</label>
