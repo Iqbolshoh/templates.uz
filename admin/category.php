@@ -51,8 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
-
-
 ?>
 
 <!DOCTYPE html>
