@@ -109,7 +109,6 @@ if ($project) {
                       <?php echo str_replace(['https://', 'http://'], '', $project['link']); ?>
                     </a>
                   </li>
-                  
                 </ul>
               </div>
               <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">

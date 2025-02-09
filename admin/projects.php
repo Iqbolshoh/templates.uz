@@ -100,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                         <th>№</th>
                                         <th>Project Name</th>
                                         <th>Image</th>
+                                        <th>Link</th>
                                         <th>Description</th>
                                         <th>Category</th>
                                         <th>Actions</th>
@@ -118,6 +119,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             <td><img src="<?= $project_image ?>"
                                                     alt="<?php echo htmlspecialchars($project['project_name']); ?>"
                                                     style="width: 100px;"></td>
+                                            <td>
+                                                <a href="<?php echo $project['link']; ?>"
+                                                    style="color: #007BFF; font-weight: 600;" target="_blank">
+                                                    <?php echo str_replace(['https://', 'http://'], '', $project['link']); ?>
+                                                </a>
+                                            </td>
                                             <td><?php echo htmlspecialchars($project['description']); ?></td>
                                             <?php $category_id = $project['category_id'] ?>
                                             <td><?php echo $query->select('category', '*', "Where id = $category_id")[0]['category_name']; ?>
