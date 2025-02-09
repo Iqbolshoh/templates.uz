@@ -72,6 +72,7 @@ foreach ($menuItems as $menuItem) {
     }
 }
 ?>
+<?php $count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM messages WHERE status = 'no_checked';")[0]['no_checked_count']; ?>
 
 <head>
     <title><?= $pageTitle ?></title>
