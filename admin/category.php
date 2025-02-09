@@ -47,8 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             }
         }
     }
-    $query->eQuery('DELETE FROM project_images WHERE project_id IN (SELECT id FROM projects WHERE category_id = ?)', [$delete_id]);
-    $query->eQuery('DELETE FROM projects WHERE category_id = ?', [$delete_id]);
     $query->eQuery('DELETE FROM category WHERE id = ?', [$delete_id]);
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
