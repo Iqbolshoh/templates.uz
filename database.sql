@@ -280,61 +280,73 @@ VALUES
     (
         1,
         'App 1',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         2,
         'project 1',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         3,
         'Branding 1',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         4,
         'Books 1',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         1,
         'App 2',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         2,
         'project 2',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         3,
         'Branding 2',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         4,
         'Books 2',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         1,
         'App 3',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         2,
         'project 3',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         3,
         'Branding 3',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     ),
     (
         4,
         'Books 3',
+        'https://iqbolshoh.uz'
         'Lorem ipsum, dolor sit amet consectetur'
     );
 
