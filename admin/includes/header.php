@@ -44,11 +44,11 @@ $menuItems = [
         ],
     ],
     [
-        "menuTitle" => "Products",
+        "menuTitle" => "Projects",
         "icon" => "fa fa-shopping-bag",
         "pages" => [
-            ["title" => "Product Categories", "url" => "category.php"],
-            ["title" => "All Products", "url" => "projects.php"],
+            ["title" => "Projects Categories", "url" => "category.php"],
+            ["title" => "All Projects", "url" => "projects.php"],
         ],
     ],
     [
