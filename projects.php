@@ -73,7 +73,8 @@ foreach ($projects as $project) {
           </ul><!-- End projects Category -->
 
           <?php $delay = 200 ?>
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
             <?php foreach ($grouped_projects as $category_id => $projects): ?>
               <?php foreach ($projects as $project): ?>
                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-category-<?= $category_id ?>"
