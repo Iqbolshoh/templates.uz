@@ -6,7 +6,8 @@ $query = new Database();
 
 // Fetch categories, projects, and project images from the database
 $categories = $query->select('category');
-$projects = $query->select('projects');
+$projects = $query->select('projects', '*', "WHERE 1 ORDER BY id DESC;");
+
 $project_images = $query->select('project_images');
 
 // Group projects by their category ID
