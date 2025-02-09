@@ -72,13 +72,10 @@ foreach ($projects as $project) {
             <?php endforeach; ?>
           </ul><!-- End projects Category -->
 
-          <?php $delay = 0 ?>
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             <?php foreach ($grouped_projects as $category_id => $projects): ?>
               <?php foreach ($projects as $project): ?>
-                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-category-<?= $category_id ?>"
-                  data-aos="fade-up" data-aos-delay="<?= $delay += 80 ?>">
+                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-category-<?= $category_id ?>">
                   <div class="portfolio-content h-100">
                     <a href="project_details.php?id=<?= $project['id'] ?>">
                       <?php
