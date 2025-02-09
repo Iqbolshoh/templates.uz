@@ -48,7 +48,7 @@ $menuItems = [
         "icon" => "fa fa-shopping-bag",
         "pages" => [
             ["title" => "Product Categories", "url" => "category.php"],
-            ["title" => "All Products", "url" => "products.php"],
+            ["title" => "All Products", "url" => "projects.php"],
         ],
     ],
     [
