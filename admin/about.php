@@ -54,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>About Us</title>
     <link href="../favicon.ico" rel="icon">
     <?php include 'includes/css.php'; ?>
 </head>
