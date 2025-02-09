@@ -28,7 +28,7 @@ $menuItems = [
         ],
     ],
     [
-        "menuTitle" => "About Us",
+        "menuTitle" => "About",
         "icon" => "fa fa-info-circle",
         "pages" => [
             ["title" => "About Us", "url" => "about.php"],
