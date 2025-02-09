@@ -71,7 +71,6 @@ if (isset($_GET['delete'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Banner Management</title>
     <!-- CSS files -->
     <?php include 'includes/css.php'; ?>
     <link href="../favicon.ico" rel="icon">
