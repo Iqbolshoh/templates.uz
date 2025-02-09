@@ -6,7 +6,8 @@ $query = new Database();
 
 // Fetch categories, projects, and project images from the database
 $categories = $query->select('category');
-$projects = $query->select('projects');
+$projects = $query->select('projects', '*', "WHERE 1 ORDER BY id DESC;");
+
 $project_images = $query->select('project_images');
 
 // Group projects by their category ID
@@ -29,7 +30,9 @@ foreach ($projects as $project) {
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -86,10 +89,15 @@ foreach ($projects as $project) {
                         }
                       }
                       ?>
-                      <img src="assets/img/projects/<?= $image_url ?>" class="img-fluid" alt="<?= $project['project_name'] ?>">
+                      <img src="assets/img/projects/<?= $image_url ?>" class="img-fluid"
+                        alt="<?= $project['project_name'] ?>">
                       <div class="portfolio-info">
                         <h4><?= $project['project_name'] ?></h4>
-                        <p><?= $project['description'] ?></p>
+                        <p>
+                          <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
+                            <?php echo str_replace(['https://', 'http://', 'www.'], '', $project['link']); ?>
+                          </a>
+                        </p>
                       </div>
                     </a>
                   </div>
@@ -108,7 +116,8 @@ foreach ($projects as $project) {
   <?php include 'includes/footer.php'; ?>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>

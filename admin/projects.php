@@ -5,10 +5,9 @@ include 'check.php';
 $projects = $query->select('projects', '*');
 $categories = $query->eQuery('SELECT * FROM category');
 
-
 // project deletion process
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete' && isset($_POST['delete_id'])) {
-    $delete_id = $_POST['delete_id'];
+    $delete_id = intval($_POST['delete_id']);
 
     // Delete images
     $imagesUrl = $query->select('project_images', '*', "WHERE project_id = $delete_id");
@@ -27,40 +26,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 // project addition process
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add') {
     $project_name = $_POST['project_name'];
+    $link = $_POST['link'];
     $description = $_POST['description'];
-    $category_id = $_POST['category_id'];
+    $category_id = intval($_POST['category_id']);
 
     // Image upload process
     $uploadedImages = [];
-    $totalFiles = count($_FILES['image']['name']);
-    if ($totalFiles <= 10) {
-        for ($i = 0; $i < $totalFiles; $i++) {
+    if (isset($_FILES['image']) && count($_FILES['image']['name']) <= 10) {
+        foreach ($_FILES['image']['name'] as $i => $image_name) {
             if ($_FILES['image']['error'][$i] == 0) {
-                $image_name = basename($_FILES['image']['name'][$i]);
-                $encrypted_name = md5(time() . $image_name) . "." . pathinfo($image_name, PATHINFO_EXTENSION);
-                $target_dir = "../assets/img/projects/";
-                $target_file = $target_dir . $encrypted_name;
+                $encrypted_name = md5(time() . $image_name) . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
+                $target_file = "../assets/img/projects/" . $encrypted_name;
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $target_file)) {
                     $uploadedImages[] = $encrypted_name;
                 }
             }
         }
+    }
 
-        if (!empty($uploadedImages)) {
-            $query->eQuery('INSERT INTO projects (project_name, description, category_id) VALUES (?, ?, ?)', [$project_name, $description, $category_id]);
+    if (!empty($uploadedImages)) {
+        $query->eQuery('INSERT INTO projects (project_name, link, description, category_id) VALUES (?, ?, ?, ?)', [$project_name, $link, $description, $category_id]);
+        $project_id = $query->lastInsertId();
 
-            $project_id = $query->lastInsertId();
-
-            foreach ($uploadedImages as $uploadedImage) {
-                $query->eQuery('INSERT INTO project_images (project_id, image_url) VALUES (?, ?)', [$project_id, $uploadedImage]);
-            }
-
-            header("Location: " . $_SERVER['PHP_SELF']);
-            exit;
+        foreach ($uploadedImages as $uploadedImage) {
+            $query->eQuery('INSERT INTO project_images (project_id, image_url) VALUES (?, ?)', [$project_id, $uploadedImage]);
         }
-    } else {
-        echo "Please do not upload more than 10 images.";
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
     }
 }
 ?>
@@ -100,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                         <th>№</th>
                                         <th>Project Name</th>
                                         <th>Image</th>
+                                        <th>Link</th>
                                         <th>Description</th>
                                         <th>Category</th>
                                         <th>Actions</th>
@@ -118,6 +113,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             <td><img src="<?= $project_image ?>"
                                                     alt="<?php echo htmlspecialchars($project['project_name']); ?>"
                                                     style="width: 100px;"></td>
+                                            <td>
+                                                <a href="<?php echo $project['link']; ?>"
+                                                    style="color: #007BFF; font-weight: 600;" target="_blank">
+                                                    <?php echo str_replace(['https://', 'http://'], '', $project['link']); ?>
+                                                </a>
+                                            </td>
                                             <td><?php echo htmlspecialchars($project['description']); ?></td>
                                             <?php $category_id = $project['category_id'] ?>
                                             <td><?php echo $query->select('category', '*', "Where id = $category_id")[0]['category_name']; ?>
@@ -152,6 +153,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                     <label for="project_name">Project Name</label>
                                                     <input type="text" class="form-control" name="project_name"
                                                         id="projectName" maxlength="255" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="link">Link</label>
+                                                    <input type="text" class="form-control" name="link" id="link"
+                                                        maxlength="255" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="description">Description</label>
