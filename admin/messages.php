@@ -27,7 +27,6 @@ if (isset($_POST['delete_message_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Messages</title>
     <link href="../favicon.ico" rel="icon">
     <!-- css -->
     <?php include 'includes/css.php'; ?>
