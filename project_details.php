@@ -103,7 +103,13 @@ if ($project) {
                 <ul>
                   <li><strong>Category</strong>: <?php echo $category; ?></li>
                   <li><strong>Project Name</strong>: <?php echo $project['project_name']; ?></li>
-                  <li><strong>Link</strong>: <?php echo $project['link'];?></li>
+                  <li>
+                    <strong>Link</strong>:
+                    <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
+                      <?php echo str_replace(['https://', 'http://'], '', $project['link']); ?>
+                    </a>
+                  </li>
+                  
                 </ul>
               </div>
               <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
