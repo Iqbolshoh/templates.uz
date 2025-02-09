@@ -119,9 +119,9 @@ INSERT INTO
     users (name, username, password)
 VALUES
     (
+        'Iqbolshoh Ilhomjonov',
         'iqbolshoh',
-        '1',
-        'acf41099f69374a61390b755eea1583a36a855ec7ab334a76292da049cfc0afb'
+        '65c2a32982abe41b1e6ff888d351ee6b7ade33affd4a595667ea7db910aecaa8'
     );
 
 INSERT INTO

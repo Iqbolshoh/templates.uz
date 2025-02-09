@@ -134,7 +134,7 @@ class Database
 
     function hashPassword($password)
     {
-        return hash_hmac('sha256', $password, "AccountPassword");
+        return hash_hmac('sha256', $password, "iqbolshoh");
     }
 
     public function login($username, $password, $table)
