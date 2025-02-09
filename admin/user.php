@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Update User</title>
   <!-- CSS includes -->
   <?php include 'includes/css.php'; ?>
   <link href="../favicon.ico" rel="icon">
