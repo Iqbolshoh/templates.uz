@@ -103,7 +103,7 @@ $query = new Database();
           </div><!-- End of Contact Form -->
 
         </div>
-
+        
       </div>
 
     </section><!-- End of Contact section -->
