@@ -76,7 +76,7 @@ foreach ($projects as $project) {
             <?php foreach ($grouped_projects as $category_id => $projects): ?>
               <?php foreach ($projects as $index => $project): ?>
                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-category-<?= $category_id ?>"
-                  data-aos="fade-up" data-aos-delay="">
+                  data-aos="fade-up" data-aos-delay="<?= $index * 100 ?>">
                   <div class="portfolio-content h-100">
                     <a href="project_details.php?id=<?= $project['id'] ?>">
                       <?php
