@@ -78,14 +78,14 @@ if ($project) {
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                            {
-                              "loop": true,
-                              "speed": 600,
-                              "autoplay": { "delay": 5000 },
-                              "slidesPerView": "auto",
-                              "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                            }
-                          </script>
+                                {
+                                  "loop": true,
+                                  "speed": 600,
+                                  "autoplay": { "delay": 5000 },
+                                  "slidesPerView": "auto",
+                                  "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                                }
+                              </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
@@ -103,6 +103,7 @@ if ($project) {
                 <ul>
                   <li><strong>Category</strong>: <?php echo $category; ?></li>
                   <li><strong>Project Name</strong>: <?php echo $project['project_name']; ?></li>
+                  <li><strong>Link</strong>: <?php echo $project['link']; ?></li>
                 </ul>
               </div>
               <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
