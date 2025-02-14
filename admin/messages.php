@@ -8,18 +8,28 @@ $query->checkUserSession('admin');
 // Retrieve all messages
 $messages = $query->select('messages', '*');
 
-// If a message is 'checked', update its status
-if (isset($_POST['check_message_id'])) {
-    $id = $_POST['check_message_id'];
-    $query->eQuery("UPDATE messages SET status = 'checked' WHERE id = ?", [$id]);
-    exit(json_encode(['status' => 'success']));
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $response = ['status' => 'error', 'message' => 'Invalid request'];
 
-// If delete button is clicked
-if (isset($_POST['delete_message_id'])) {
-    $id = $_POST['delete_message_id'];
-    $query->eQuery("DELETE FROM messages WHERE id = ?", [$id]);
-    exit(json_encode(['status' => 'success']));
+    if (isset($_POST['check_message_id'])) {
+        $id = intval($_POST['check_message_id']);
+        if ($id > 0) {
+            $query->update('messages', ['status' => 'checked'], 'id = ?', [$id], 'i');
+            $response = ['status' => 'success'];
+        }
+    }
+
+    if (isset($_POST['delete_message_id'])) {
+        $id = intval($_POST['delete_message_id']);
+        if ($id > 0) {
+            $query->delete('messages', 'id = ?', [$id], 'i');
+            $response = ['status' => 'success'];
+        }
+    }
+
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit;
 }
 ?>
 
@@ -34,6 +44,7 @@ if (isset($_POST['delete_message_id'])) {
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/sweetalert2-theme-bootstrap-4.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <style>
     .no-message {
@@ -53,16 +64,12 @@ if (isset($_POST['delete_message_id'])) {
     <div class="wrapper">
         <?php include './header.php' ?>
         <div class="content-wrapper">
-
             <section class="content">
                 <div class="container-fluid">
-
                     <div class="row">
-                        <!-- Display messages -->
                         <div class="col-12">
                             <div class="card p-3 shadow-sm">
-
-                                <?php if (count($messages) === 0): ?>
+                                <?php if (empty($messages)): ?>
                                     <p class="no-message">No messages available.</p>
                                 <?php else: ?>
                                     <ul class="list-group">
@@ -90,35 +97,31 @@ if (isset($_POST['delete_message_id'])) {
                 </div>
             </section>
         </div>
-
-        <!-- Main Footer -->
         <?php include './footer.php'; ?>
     </div>
 
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/sweetalert2.min.js"></script>
-    <script src="../assets/js/adminlte.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script>
-        // Button to mark message as 'Checked'
-        $('.check-message').on('click', function () {
-            var messageId = $(this).data('id');
-            $.post('', {
-                check_message_id: messageId
-            }, function (response) {
-                location.reload();
+        $(document).ready(function () {
+            $('.check-message').on('click', function () {
+                var messageId = $(this).data('id');
+                $.post('', { check_message_id: messageId }, function (response) {
+                    if (response.status === 'success') {
+                        location.reload();
+                    } else {
+                        alert(response.message);
+                    }
+                }, 'json');
             });
-        });
 
-        // Delete message
-        $('.delete-message').on('click', function () {
-            var messageId = $(this).data('id');
-            $.post('', {
-                delete_message_id: messageId
-            }, function (response) {
-                location.reload();
+            $('.delete-message').on('click', function () {
+                var messageId = $(this).data('id');
+                $.post('', { delete_message_id: messageId }, function (response) {
+                    if (response.status === 'success') {
+                        location.reload();
+                    } else {
+                        alert(response.message);
+                    }
+                }, 'json');
             });
         });
     </script>
