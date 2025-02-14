@@ -1,7 +1,5 @@
 <?php
-include 'config.php';
-
-// Create a new Database instance
+include './config.php';
 $query = new Database();
 
 // Fetch categories, projects, and project images from the database

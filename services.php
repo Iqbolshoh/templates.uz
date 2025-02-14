@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config.php';
 $query = new Database();
 $services = $query->select('services', '*');
 $bioservices = $query->select('bioServices', '*');

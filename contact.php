@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config.php';
 $query = new Database();
 ?>
 
@@ -73,6 +73,7 @@ $query = new Database();
           </div><!-- End of Google Map -->
 
           <div class="col-lg-6">
+
             <form action="send_message.php" method="post" class="php-email-form" id="contactForm" data-aos="fade-up"
               data-aos-delay="100">
               <div class="row gy-4">
@@ -101,7 +102,7 @@ $query = new Database();
             </form>
 
           </div><!-- End of Contact Form -->
-
+          
         </div>
 
       </div>

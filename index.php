@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config.php';
 $query = new Database();
 $banners = $query->select('banners', '*');
 $features = $query->select('features', '*');

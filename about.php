@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include './config.php';
 $query = new Database();
 $aboutData = $query->select('about', '*');
 $serviceItems  = $query->select('about_ul_items', '*');
