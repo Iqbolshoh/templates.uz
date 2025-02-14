@@ -5,7 +5,26 @@ include '../config.php';
 $query = new Database();
 $query->checkUserSession('admin');
 
-$statistics = $query->select('statistics', '*') ?>
+$statistics = $query->select('statistics', '*');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = intval($_POST['id']);
+    $count = intval($_POST['count']);
+    $title = htmlspecialchars($_POST['title'], ENT_QUOTES, 'UTF-8');
+    $description = htmlspecialchars($_POST['description'], ENT_QUOTES, 'UTF-8');
+
+    $data = [
+        'count' => $count,
+        'title' => $title,
+        'description' => $description
+    ];
+
+    if ($query->update('statistics', $data, 'id = ?', [$id], 'i')) {
+        header("Location: {$_SERVER['PHP_SELF']}");
+        exit;
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +41,7 @@ $statistics = $query->select('statistics', '*') ?>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="content-wrapper">
 
             <section class="content">
@@ -70,7 +89,7 @@ $statistics = $query->select('statistics', '*') ?>
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <form action="update_statistics.php" method="POST">
+                                                    <form method="POST">
                                                         <div class="modal-body">
                                                             <input type="hidden" name="id"
                                                                 value="<?php echo $statistic['id']; ?>">
@@ -110,7 +129,7 @@ $statistics = $query->select('statistics', '*') ?>
         </div>
 
         <!-- Main Footer -->
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 
     <script src="../assets/js/jquery.min.js"></script>
