@@ -1,9 +1,9 @@
 <?php
 include 'config.php';
 $query = new Database();
-$services = $query->select('services');
-$bioservices = $query->select('bioServices');
-$ourservices = $query->select('ourServices');
+$services = $query->select('services', '*');
+$bioservices = $query->select('bioServices', '*');
+$ourservices = $query->select('ourServices', '*');
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,9 @@ $ourservices = $query->select('ourServices');
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -75,9 +77,11 @@ $ourservices = $query->select('ourServices');
 
               <?php foreach ($ourservices as $service): ?>
                 <div class="progress">
-                  <span class="skill"><span><?php echo $service['service_name']; ?></span> <i class="val"><?php echo $service['skill_level']; ?>%</i></span>
+                  <span class="skill"><span><?php echo $service['service_name']; ?></span> <i
+                      class="val"><?php echo $service['skill_level']; ?>%</i></span>
                   <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $service['skill_level']; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $service['skill_level']; ?>"
+                      aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div><!-- End Skills Item -->
               <?php endforeach; ?>
@@ -117,7 +121,8 @@ $ourservices = $query->select('ourServices');
   <?php include 'includes/footer.php'; ?>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
