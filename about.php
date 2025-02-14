@@ -1,9 +1,9 @@
 <?php
 include 'config.php';
 $query = new Database();
-$aboutData = $query->select('about');
-$serviceItems  = $query->select('about_ul_items');
-$statistics = $query->select('statistics');
+$aboutData = $query->select('about', '*');
+$serviceItems  = $query->select('about_ul_items', '*');
+$statistics = $query->select('statistics', '*');
 
 // Prepare the about items array
 $aboutItems = [];
