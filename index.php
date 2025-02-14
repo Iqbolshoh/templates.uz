@@ -1,11 +1,11 @@
 <?php
 include 'config.php';
 $query = new Database();
-$banners = $query->select('banners');
-$features = $query->select('features');
+$banners = $query->select('banners', '*');
+$features = $query->select('features', '*');
 $aboutData = $query->select('about');
-$serviceItems  = $query->select('about_ul_items');
-$services = $query->select('services');
+$serviceItems  = $query->select('about_ul_items', '*');
+$services = $query->select('services', '*');
 
 $aboutItems = [];
 foreach ($aboutData as $about) {
