@@ -1,5 +1,11 @@
-<?php include 'check.php'; ?>
-<?php $statistics = $query->select('statistics', '*') ?>
+<?php
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
+
+$statistics = $query->select('statistics', '*') ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,5 +1,11 @@
-<?php include 'check.php'; ?>
-<?php $services = $query->select('services', '*') ?>
+<?php
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
+
+$services = $query->select('services', '*') ?>
 
 <!DOCTYPE html>
 <html lang="en">

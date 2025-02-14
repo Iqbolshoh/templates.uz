@@ -1,6 +1,10 @@
-<?php include 'check.php'; ?>
-
 <?php
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
+
 $banners = $query->select('banners', '*');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {

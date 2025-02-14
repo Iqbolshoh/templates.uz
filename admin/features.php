@@ -1,6 +1,10 @@
-<?php include 'check.php'; ?>
-
 <?php
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
     $id = $_POST['id'];
     $icon = $_POST['icon'];

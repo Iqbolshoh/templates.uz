@@ -1,5 +1,9 @@
 <?php
-include 'check.php';
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
 
 // Old image path for the bioServices
 $old_image_path = "../assets/img/" . $query->select("bioServices", "*")[0]['image'];

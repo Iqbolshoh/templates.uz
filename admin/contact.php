@@ -1,6 +1,9 @@
-<?php include 'check.php'; ?>
-
 <?php
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
 
 // Fetch contact information
 $contact = $query->select('contact', "*")[0];

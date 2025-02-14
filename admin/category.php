@@ -1,5 +1,9 @@
 <?php
-include 'check.php';
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
 
 // Select Category
 $categories = $query->eQuery('SELECT 

@@ -1,4 +1,9 @@
-<?php include 'check.php';
+<?php
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
 
 $old_image_path = "../" . $query->select("about", "*")[0]['image'];
 

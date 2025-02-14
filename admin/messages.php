@@ -1,6 +1,10 @@
-<?php include 'check.php'; ?>
-
 <?php
+session_start();
+
+include '../config.php';
+$query = new Database();
+$query->checkUserSession('admin');
+
 // Retrieve all messages
 $messages = $query->select('messages', '*');
 
