@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$id = isset($_GET['id']) ? intval($_GET['id']) : 1;
+$id = $_GET['id'] ?? 1;
 
 $query = new Database();
 $project = $query->getById('projects', $id);
@@ -78,14 +78,14 @@ if ($project) {
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 600,
-                      "autoplay": { "delay": 5000 },
-                      "slidesPerView": "auto",
-                      "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                    }
-                  </script>
+                      {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": { "delay": 5000 },
+                        "slidesPerView": "auto",
+                        "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                      }
+                    </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
