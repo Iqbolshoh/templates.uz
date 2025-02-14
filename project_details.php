@@ -1,9 +1,9 @@
 <?php
-include 'config.php';
+include './config.php';
+$query = new Database();
 
 $id = $_GET['id'] ?? 1;
 
-$query = new Database();
 $project = $query->getById('projects', $id);
 
 if ($project) {

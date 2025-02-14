@@ -1,6 +1,5 @@
 <?php
-
-include 'config.php';
+include './config.php';
 $query = new Database();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
