@@ -8,9 +8,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="../favicon.ico" rel="icon">
-    <!-- CSS files -->
-    <?php include 'includes/css.php'; ?>
+    <link rel="icon" href="images/AdminLTELogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/sweetalert2-theme-bootstrap-4.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -42,40 +44,51 @@
                                             <td><?php echo $statistic['description']; ?></td>
                                             <td>
                                                 <!-- Edit button for the form -->
-                                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editModal<?php echo $statistic['id']; ?>">
+                                                <button type="button" class="btn btn-warning" data-toggle="modal"
+                                                    data-target="#editModal<?php echo $statistic['id']; ?>">
                                                     Edit
                                                 </button>
                                             </td>
                                         </tr>
 
                                         <!-- Modal for editing -->
-                                        <div class="modal fade" id="editModal<?php echo $statistic['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?php echo $statistic['id']; ?>" aria-hidden="true">
+                                        <div class="modal fade" id="editModal<?php echo $statistic['id']; ?>" tabindex="-1"
+                                            role="dialog" aria-labelledby="editModalLabel<?php echo $statistic['id']; ?>"
+                                            aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="editModalLabel<?php echo $statistic['id']; ?>">Edit</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <h5 class="modal-title"
+                                                            id="editModalLabel<?php echo $statistic['id']; ?>">Edit</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <form action="update_statistics.php" method="POST">
                                                         <div class="modal-body">
-                                                            <input type="hidden" name="id" value="<?php echo $statistic['id']; ?>">
+                                                            <input type="hidden" name="id"
+                                                                value="<?php echo $statistic['id']; ?>">
                                                             <div class="form-group">
                                                                 <label for="count">Count</label>
-                                                                <input type="number" class="form-control" name="count" value="<?php echo $statistic['count']; ?>" required>
+                                                                <input type="number" class="form-control" name="count"
+                                                                    value="<?php echo $statistic['count']; ?>" required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="title">Title</label>
-                                                                <input type="text" class="form-control" name="title" value="<?php echo $statistic['title']; ?>" maxlength="100" required>
+                                                                <input type="text" class="form-control" name="title"
+                                                                    value="<?php echo $statistic['title']; ?>"
+                                                                    maxlength="100" required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="description">Description</label>
-                                                                <textarea class="form-control" name="description" required maxlength="255"><?php echo $statistic['description']; ?></textarea>
+                                                                <textarea class="form-control" name="description" required
+                                                                    maxlength="255"><?php echo $statistic['description']; ?></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
                                                             <button type="submit" class="btn btn-primary">Update</button>
                                                         </div>
                                                     </form>
