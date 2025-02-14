@@ -1,14 +1,13 @@
 <?php
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 
-// Sidebar-Menu structure -->
 $menuItems = [
     [
-        "menuTitle" => "User",
-        "icon" => "fa-solid fa-user-gear",
+        "menuTitle" => "Settings",
+        "icon" => "fas fa-cog",
         "pages" => [
-            ["title" => "Admin", "url" => "index.php"],
-            ["title" => "User Settings", "url" => "user.php"],
+            ["title" => "Update Profile", "url" => "index.php"],
+            ["title" => "Active Sessions", "url" => "active_sessions.php"]
         ],
     ],
     [
@@ -80,10 +79,10 @@ $breadcrumbItems = $activePageInfo['breadcrumbItems'] ?? [];
 $pageTitle = $activePageInfo['pageTitle'] ?? '';
 $activeMenu = $activePageInfo['activeMenu'] ?? null;
 $activePage = $activePageInfo['activePage'] ?? null;
-$message_count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count FROM messages WHERE status = 'no_checked';")[0]['no_checked_count'] ?? 0;
 ?>
 
 <title><?= $pageTitle ?></title>
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -101,8 +100,10 @@ $message_count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count F
         </div>
     </form>
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown"><a class="nav-link" href="./messages.php"><i class="far fa-comments"></i><span
-                    class="badge badge-danger navbar-badge"><?= $message_count ?></span></a></li>
+        <li class="nav-item dropdown"><a class="nav-link" href="#messages"><i class="far fa-comments"></i><span
+                    class="badge badge-danger navbar-badge">2</span></a></li>
+        <li class="nav-item dropdown"><a class="nav-link" href="#notifications"><i class="far fa-bell"></i><span
+                    class="badge badge-warning navbar-badge">5</span></a></li>
     </ul>
 </nav>
 
@@ -127,12 +128,12 @@ $message_count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count F
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="./" class="brand-link">
-        <img src="../assets/img/logo.png" alt="Admin Panel Logo" class="brand-image img-circle elevation-3">
+        <img src="../src/images/logo.png" alt="Admin Panel Logo" class="brand-image img-circle elevation-3">
         <span class="brand-text font-weight-light">Admin Panel</span>
     </a>
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image"><img src="../assets/img/default.png" class="img-circle elevation-2" alt="User Image">
+            <div class="image"><img src="../src/images/default.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info"><a href="./" class="d-block">Iqbolshoh Ilhomjonov</a></div>
         </div>
@@ -184,7 +185,7 @@ $message_count = (new Database())->eQuery("SELECT COUNT(*) AS no_checked_count F
             confirmButtonText: 'Yes, log me out!'
         }).then((result) => {
             if (result.value) {
-                window.location.href = './logout/';
+                window.location.href = '../logout/';
             }
         });
     }
