@@ -115,9 +115,10 @@ if (isset($_GET['edit'])) {
         <?php include 'includes/footer.php'; ?>
     </div>
 
-    <!-- SCRIPTS -->
-    <?php include 'includes/js.php'; ?>
-
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sweetalert2.min.js"></script>
+    <script src="../assets/js/adminlte.min.js"></script>
     <script>
         // Open modal when the edit button is clicked
         $(document).ready(function () {

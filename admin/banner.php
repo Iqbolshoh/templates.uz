@@ -183,9 +183,10 @@ if (isset($_GET['delete'])) {
         <?php include 'includes/footer.php'; ?>
     </div>
 
-    <!-- JS files -->
-    <?php include 'includes/js.php'; ?>
-
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sweetalert2.min.js"></script>
+    <script src="../assets/js/adminlte.min.js"></script>
     <script>
         function deleteBanner(id) {
             Swal.fire({
