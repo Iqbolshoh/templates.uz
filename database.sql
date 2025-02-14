@@ -25,6 +25,15 @@ CREATE TABLE IF NOT EXISTS active_sessions (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+CREATE TABLE banners (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    button_text VARCHAR(100) NOT NULL,
+    button_link VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE features (
     id INT AUTO_INCREMENT PRIMARY KEY,
     icon VARCHAR(255) NOT NULL,
