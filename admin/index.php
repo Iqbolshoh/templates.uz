@@ -144,9 +144,9 @@ if (
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../src/js/jquery.min.js"></script>
-    <script src="../src/js/bootstrap.bundle.min.js"></script>
-    <script src="../src/js/adminlte.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/adminlte.min.js"></script>
 
 </body>
 
