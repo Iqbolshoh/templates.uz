@@ -5,19 +5,15 @@ include '../config.php';
 $query = new Database();
 $query->checkUserSession('admin');
 
-$old_image_path = "../" . $query->select("about", "*")[0]['image'];
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['update_about'])) {
-
         $id = $_POST['id'];
         $title = $_POST['title'];
         $p1 = $_POST['p1'];
         $p2 = $_POST['p2'];
         $image = $_FILES['image']['name'];
 
-        $sql = "SELECT image FROM about WHERE id=?";
-        $result = $query->eQuery($sql, [$id]);
+        $old_image_path = "../" . $query->select("about", "image", "id = ?", [$id], 'i')[0]['image'];
 
         if ($image) {
             if (file_exists($old_image_path)) {
@@ -26,31 +22,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $new_image_name = uniqid() . '-' . basename($image);
             $target_path = "../assets/img/$new_image_name";
-
             move_uploaded_file($_FILES['image']['tmp_name'], $target_path);
 
-            $sql = "UPDATE about SET title=?, p1=?, p2=?, image=? WHERE id=?";
-            $query->eQuery($sql, [$title, $p1, $p2, 'assets/img/' . $new_image_name, $id]);
+            $update_data = [
+                'title' => $title,
+                'p1' => $p1,
+                'p2' => $p2,
+                'image' => "assets/img/$new_image_name"
+            ];
         } else {
-            $sql = "UPDATE about SET title=?, p1=?, p2=? WHERE id=?";
-            $query->eQuery($sql, [$title, $p1, $p2, $id]);
+            $update_data = [
+                'title' => $title,
+                'p1' => $p1,
+                'p2' => $p2
+            ];
         }
 
-        header('Location: about.php?updated=true');
-        exit();
+        $query->update('about', $update_data, 'id = ?', [$id], 'i');
+        header("Location: {$_SERVER['PHP_SELF']}");
+        exit;
     } elseif (isset($_POST['update_ul_items'])) {
         $ul_item_id = $_POST['ul_item_id'];
         $list_item = $_POST['list_item'];
 
-        $sql = "UPDATE about_ul_items SET list_item=? WHERE id=?";
-        $query->eQuery($sql, [$list_item, $ul_item_id]);
-
-        header('Location: about.php?updated=true');
-        exit();
+        $query->update('about_ul_items', ['list_item' => $list_item], 'id = ?', [$ul_item_id], 'i');
+        header("Location: {$_SERVER['PHP_SELF']}");
+        exit;
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="icon" href="images/AdminLTELogo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -68,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="content-wrapper">
 
             <section class="content">
@@ -226,7 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <!-- Main Footer -->
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 
     <script src="../assets/js/jquery.min.js"></script>
