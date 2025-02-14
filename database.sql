@@ -120,6 +120,7 @@ CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
     category_id INT,
     project_name VARCHAR(255) NOT NULL,
+    link VARCHAR(255) NOT NULL,
     description TEXT,
     FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
 );
