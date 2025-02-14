@@ -71,9 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'service_name' => $service_name,
                 'skill_level' => $skill_level
             ];
-            
+
             $query->update('ourServices', $data, 'id = ?', [$id], 'i');
-            
+
             header("Location: {$_SERVER['PHP_SELF']}");
             exit;
         }
