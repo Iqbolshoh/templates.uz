@@ -99,7 +99,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <?php include './footer.php'; ?>
     </div>
-
+    
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sweetalert2.min.js"></script>
+    <script src="../assets/js/adminlte.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.check-message').on('click', function () {
