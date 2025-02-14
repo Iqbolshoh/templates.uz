@@ -5,7 +5,26 @@ include '../config.php';
 $query = new Database();
 $query->checkUserSession('admin');
 
-$services = $query->select('services', '*') ?>
+$services = $query->select('services', '*');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+
+    $data = [
+        'title' => $title,
+        'description' => $description
+    ];
+
+    if ($query->update('services', $data, 'id = ?', [$id], 'i')) {
+        header("Location: {$_SERVER['PHP_SELF']}");
+        exit;
+    } else {
+        exit;
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +41,7 @@ $services = $query->select('services', '*') ?>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="content-wrapper">
 
             <section class="content">
@@ -68,7 +87,7 @@ $services = $query->select('services', '*') ?>
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    <form action="update_services.php" method="POST">
+                                                    <form method="POST">
                                                         <div class="modal-body">
                                                             <input type="hidden" name="id"
                                                                 value="<?php echo $service['id']; ?>">
@@ -103,7 +122,7 @@ $services = $query->select('services', '*') ?>
         </div>
 
         <!-- Main Footer -->
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 
     <script src="../assets/js/jquery.min.js"></script>
