@@ -11,12 +11,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
     $title = $_POST['title'];
     $description = $_POST['description'];
 
-    $sql = "UPDATE features SET title=?, description=? WHERE id=?";
-    $query->eQuery($sql, [$title, $description, $id]);
+    $data = [
+        'title' => $title,
+        'description' => $description
+    ];
 
-    header("Location: {$_SERVER['PHP_SELF']}");
+    $query->update('features', $data, 'id = ?', [$id], 'i');
+
+    header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
+
 
 $editFeature = null;
 if (isset($_GET['edit'])) {
@@ -40,7 +45,7 @@ if (isset($_GET['edit'])) {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="content-wrapper">
 
             <section class="content">
@@ -115,7 +120,7 @@ if (isset($_GET['edit'])) {
         </div>
 
         <!-- Main Footer -->
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 
     <script src="../assets/js/jquery.min.js"></script>
