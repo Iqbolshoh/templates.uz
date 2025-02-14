@@ -4,11 +4,10 @@ $query = new Database();
 
 $id = $_GET['id'] ?? 1;
 
-$project = $query->getById('projects', $id);
-
+$project = $query->select('projects', '*', 'id = ?', [$id], 'i');
 if ($project) {
-  $category = isset($project['category_id']) ? $query->getById('category', $project['category_id'])['category_name'] : 'Unknown';
-  $project_images = $query->executeQuery("SELECT image_url FROM project_images WHERE project_id = $id")->fetch_all(MYSQLI_ASSOC);
+  $category = $query->select('category','*', 'id = ?', [$project[0]['category_id']], 'i' )[0]['category_name'] ?? 'Unknown';
+  $project_images = $query->select('project_images', '*',  'project_id = ?', [$id], 'i');
   $project_images = !empty($project_images) ? array_column($project_images, 'image_url') : [];
 }
 ?>
@@ -74,17 +73,17 @@ if ($project) {
     <section id="portfolio-details" class="portfolio-details section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
-          <?php if ($project): ?>
+          <?php if (isset($project[0])): ?>
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                      {
-                        "loop": true,
-                        "speed": 600,
-                        "autoplay": { "delay": 5000 },
-                        "slidesPerView": "auto",
-                        "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                      }
+                 {
+                   "loop": true,
+                   "speed": 600,
+                   "autoplay": { "delay": 5000 },
+                   "slidesPerView": "auto",
+                   "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                 }
                     </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
@@ -102,18 +101,18 @@ if ($project) {
                 <h3>Project Information</h3>
                 <ul>
                   <li><strong>Category</strong>: <?php echo $category; ?></li>
-                  <li><strong>Project Name</strong>: <?php echo $project['project_name']; ?></li>
+                  <li><strong>Project Name</strong>: <?php echo $project[0]['project_name']; ?></li>
                   <li>
                     <strong>Link</strong>:
-                    <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
-                      <?php echo str_replace(['https://', 'http://', 'www.'], '', $project['link']); ?>
+                    <a href="<?php echo $project[0]['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
+                      <?php echo str_replace(['https://', 'http://', 'www.'], '', $project[0]['link']); ?>
                     </a>
                   </li>
                 </ul>
               </div>
               <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                 <h2>Project Description</h2>
-                <p><?php echo $project['project_name']; ?> – <?php echo $project['description']; ?></p>
+                <p><?php echo $project[0]['project_name']; ?> – <?php echo $project[0]['description']; ?></p>
               </div>
             </div>
           <?php else: ?>
