@@ -37,7 +37,7 @@ $menuItems = [
         "menuTitle" => "Services",
         "icon" => "fa fa-briefcase",
         "pages" => [
-            ["title" => "Our Services", "url" => "ourServices.php"],
+            ["title" => "Our Services", "url" => "our_services.php"],
             ["title" => "Services", "url" => "services.php"],
         ],
     ],
