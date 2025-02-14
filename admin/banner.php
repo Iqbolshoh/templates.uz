@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $banner = $query->select('banners', '*', "WHERE id = {$id}");
+    $banner = $query->select('banners', '*', 'id = ?', [$id], 'i');
 
     if (isset($banner[0])) {
         $banner = $banner[0];
@@ -52,7 +52,7 @@ if (isset($_GET['delete'])) {
 
         if (file_exists($imagePath)) {
             if (unlink($imagePath)) {
-                $query->delete('banners', "WHERE id = {$id}");
+                $query->delete('banners', 'id = ?', [$id], 'i');
                 header("Location: {$_SERVER['PHP_SELF']}");
                 exit;
             } else {
@@ -83,7 +83,7 @@ if (isset($_GET['delete'])) {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="content-wrapper">
 
             <section class="content">
@@ -183,7 +183,7 @@ if (isset($_GET['delete'])) {
         </div>
 
         <!-- Footer -->
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 
     <script src="../assets/js/jquery.min.js"></script>
