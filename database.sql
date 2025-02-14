@@ -2,20 +2,27 @@ CREATE DATABASE templates;
 
 USE templates;
 
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    username VARCHAR(30) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') NOT NULL DEFAULT 'user',
+    profile_picture VARCHAR(255) DEFAULT 'default.png',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE banners (
+CREATE TABLE IF NOT EXISTS active_sessions (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    image VARCHAR(255) NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL,
-    button_text VARCHAR(100) NOT NULL,
-    button_link VARCHAR(255) NOT NULL
+    user_id INT NOT NULL,
+    device_name VARCHAR(255) NOT NULL,
+    ip_address VARCHAR(45) NOT NULL,
+    last_activity TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    session_token VARCHAR(255) UNIQUE NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE features (
