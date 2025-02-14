@@ -5,12 +5,10 @@ include '../config.php';
 $query = new Database();
 $query->checkUserSession('admin');
 
-// Old image path for the bioServices
 $old_image_path = "../assets/img/" . $query->select("bioServices", "*")[0]['image'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
-        // Update for bioServices
         if (isset($_POST['update_bio_services'])) {
             $id = $_POST['id'];
             $h2 = $_POST['h2'];
@@ -19,8 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $p2 = $_POST['p2'];
             $image = $_FILES['image']['name'];
 
-            $sql = "SELECT image FROM bioServices WHERE id=?";
-            $result = $query->eQuery($sql, [$id]);
+            $result = $query->select('bioServices', '*', 'id = ?', [$id], 'i');
 
             if ($image) {
                 if (file_exists($old_image_path)) {
@@ -41,28 +38,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     throw new Exception("Error occurred during image upload.");
                 }
 
-                $sql = "UPDATE bioServices SET h2=?, p1=?, image=?, h3=?, p2=? WHERE id=?";
-                $query->eQuery($sql, [$h2, $p1, $new_image_name, $h3, $p2, $id]);
+                $data = [
+                    'h2' => $h2,
+                    'p1' => $p1,
+                    'image' => $new_image_name,
+                    'h3' => $h3,
+                    'p2' => $p2
+                ];
+
+                $query->update('bioServices', $data, 'id = ?', [$id], 'i');
             } else {
-                $sql = "UPDATE bioServices SET h2=?, p1=?, h3=?, p2=? WHERE id=?";
-                $query->eQuery($sql, [$h2, $p1, $h3, $p2, $id]);
+                $data = [
+                    'h2' => $h2,
+                    'p1' => $p1,
+                    'h3' => $h3,
+                    'p2' => $p2
+                ];
+
+                $query->update('bioServices', $data, 'id = ?', [$id], 'i');
             }
 
-            header('Location: ourServices.php?updated=true');
-            exit();
+            header("Location: {$_SERVER['PHP_SELF']}");
+            exit;
         }
 
-        // Update for ourServices
         if (isset($_POST['update_our_services'])) {
             $id = $_POST['id'];
             $service_name = $_POST['service_name'];
             $skill_level = $_POST['skill_level'];
 
-            $sql = "UPDATE ourServices SET service_name=?, skill_level=? WHERE id=?";
-            $query->eQuery($sql, [$service_name, $skill_level, $id]);
-
-            header('Location: ourServices.php?updated=true');
-            exit();
+            $data = [
+                'service_name' => $service_name,
+                'skill_level' => $skill_level
+            ];
+            
+            $query->update('ourServices', $data, 'id = ?', [$id], 'i');
+            
+            header("Location: {$_SERVER['PHP_SELF']}");
+            exit;
         }
     } catch (Exception $e) {
         echo 'Error: ' . $e->getMessage();
@@ -85,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="content-wrapper">
 
             <section class="content">
@@ -169,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
 
         <!-- Main Footer -->
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 
     <!-- Edit Modal -->
