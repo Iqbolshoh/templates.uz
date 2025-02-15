@@ -50,11 +50,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     }
 
     if (!empty($uploadedImages)) {
-        $query->eQuery('INSERT INTO projects (project_name, link, description, category_id) VALUES (?, ?, ?, ?)', [$project_name, $link, $description, $category_id]);
-        $project_id = $query->lastInsertId();
+        $data = [
+            'project_name' => $project_name,
+            'link' => $link,
+            'description' => $description,
+            'category_id' => $category_id
+        ];
+
+        $project_id = $query->insert('projects', $data);
 
         foreach ($uploadedImages as $uploadedImage) {
-            $query->eQuery('INSERT INTO project_images (project_id, image_url) VALUES (?, ?)', [$project_id, $uploadedImage]);
+            $data = [
+                'project_id' => $project_id,
+                'image_url' => $uploadedImage
+            ];
+
+            $query->insert('project_images', $data);
         }
 
         header("Location: " . $_SERVER['PHP_SELF']);
@@ -110,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                         <tr id="project<?php echo $project['id']; ?>">
                                             <?php
                                             $projectid = $project['id'];
-                                            $project_images = $query->select('project_images', '*', "Where project_id = $projectid");
+                                            $project_images = $query->select('project_images', '*', "project_id = ?", [$projectid], 'i');
                                             $project_image = "../assets/img/projects/" . $project_images[0]['image_url'];
                                             ?>
                                             <td><?php echo $i + 1; ?></td>
@@ -126,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                             </td>
                                             <td><?php echo htmlspecialchars($project['description']); ?></td>
                                             <?php $category_id = $project['category_id'] ?>
-                                            <td><?php echo $query->select('category', '*', "Where id = $category_id")[0]['category_name']; ?>
+                                            <td><?php echo $query->select('category', '*', "id = ?", [$category_id], 'i')[0]['category_name']; ?>
                                             </td>
 
                                             <td>
