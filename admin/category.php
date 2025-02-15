@@ -6,7 +6,7 @@ $query = new Database();
 $query->checkUserSession('admin');
 
 // Select Category
-$categories = $query->executeQuery('SELECT 
+$stmt = $query->executeQuery('SELECT 
     c.id,
     c.category_name, 
     COUNT(p.id) AS project_count
@@ -15,8 +15,14 @@ FROM
 LEFT JOIN 
     projects p ON c.id = p.category_id
 GROUP BY 
-    c.id, c.category_name;
-');
+    c.id, c.category_name;');
+
+if (!$stmt) {
+    die("Query execution failed!");
+}
+
+$result = $stmt->get_result();
+$categories = $result->fetch_all(MYSQLI_ASSOC);
 
 // Add Category
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add' && isset($_POST['category_name'])) {
