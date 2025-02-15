@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'Twitter link has been updated!', 'twitter' => $twitter]);
-        exit();
+        exit;
     }
 
     // Update Facebook link
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'Facebook link has been updated!', 'facebook' => $facebook]);
-        exit();
+        exit;
     }
 
     // Update Instagram link
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'Instagram link has been updated!', 'instagram' => $instagram]);
-        exit();
+        exit;
     }
 
     // Update LinkedIn link
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'LinkedIn link has been updated!', 'linkedin' => $linkedin]);
-        exit();
+        exit;
     }
 
     // Update Contact Box information

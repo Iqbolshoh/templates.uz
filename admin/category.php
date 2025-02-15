@@ -6,7 +6,7 @@ $query = new Database();
 $query->checkUserSession('admin');
 
 // Select Category
-$categories = $query->eQuery('SELECT 
+$categories = $query->executeQuery('SELECT 
     c.id,
     c.category_name, 
     COUNT(p.id) AS project_count
@@ -22,7 +22,7 @@ GROUP BY
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add' && isset($_POST['category_name'])) {
     $category_name = $_POST['category_name'];
     $query->eQuery('INSERT INTO category (category_name) VALUES (?)', [$category_name]);
-    header("Location: " . $_SERVER['PHP_SELF']);
+    header(header: "Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
