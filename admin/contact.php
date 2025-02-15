@@ -13,9 +13,8 @@ $contact_box = $query->select('contact_box', "*");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['twitter'])) {
         $twitter = $_POST['twitter'];
-
-        $sql = "UPDATE contact SET twitter=? WHERE id=1";
-        $query->eQuery($sql, [$twitter]);
+        $data = ['twitter' => $twitter];
+        $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'Twitter link has been updated!', 'twitter' => $twitter]);
         exit();
@@ -24,9 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Update Facebook link
     if (isset($_POST['facebook'])) {
         $facebook = $_POST['facebook'];
-
-        $sql = "UPDATE contact SET facebook=? WHERE id=1";
-        $query->eQuery($sql, [$facebook]);
+        $data = ['facebook' => $facebook];
+        $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'Facebook link has been updated!', 'facebook' => $facebook]);
         exit();
@@ -35,9 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Update Instagram link
     if (isset($_POST['instagram'])) {
         $instagram = $_POST['instagram'];
-
-        $sql = "UPDATE contact SET instagram=? WHERE id=1";
-        $query->eQuery($sql, [$instagram]);
+        $data = ['instagram' => $instagram];
+        $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'Instagram link has been updated!', 'instagram' => $instagram]);
         exit();
@@ -46,9 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Update LinkedIn link
     if (isset($_POST['linkedin'])) {
         $linkedin = $_POST['linkedin'];
-
-        $sql = "UPDATE contact SET linkedin=? WHERE id=1";
-        $query->eQuery($sql, [$linkedin]);
+        $data = ['linkedin' => $linkedin];
+        $query->update('contact', $data, 'id = ?', [1], 'i');
 
         echo json_encode(['success' => true, 'message' => 'LinkedIn link has been updated!', 'linkedin' => $linkedin]);
         exit();
@@ -63,8 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $title = $_POST[$title_field];
             $value = $_POST[$value_field];
 
-            $sql = "UPDATE contact_box SET title=?, value=? WHERE id=?";
-            $query->eQuery($sql, [$title, $value, $box['id']]);
+            $data = [
+                'title' => $title,
+                'value' => $value
+            ];
+
+            $query->update('contact_box', $data, 'id = ?', [$box['id']], 'i');
         }
     }
 
