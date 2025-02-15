@@ -21,7 +21,9 @@ GROUP BY
 // Add Category
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add' && isset($_POST['category_name'])) {
     $category_name = $_POST['category_name'];
-    $query->eQuery('INSERT INTO category (category_name) VALUES (?)', [$category_name]);
+    $data = ['category_name' => $category_name];
+
+    $query->insert('category', $data);
     header(header: "Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
