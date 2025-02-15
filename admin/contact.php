@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     echo json_encode($_POST);
-    exit();
+    exit;
 }
 ?>
 
@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function {
             <?php foreach ($socials as $index => $social) { ?>
                 $('#contactForm-<?= $index ?>').on('submit', function (event) {
                     event.preventDefault();
