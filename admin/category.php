@@ -32,7 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'edit' && isset($_POST['id'])) {
     $id = $_POST['id'];
     $category_name = $_POST['category_name'];
-    $query->eQuery('UPDATE category SET category_name = ? WHERE id = ?', [$category_name, $id]);
+    $data = ['category_name' => $category_name];
+
+    $query->update('category', $data, 'id = ?', [$id], 'i');
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
@@ -41,11 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete' && isset($_POST['delete_id'])) {
     $delete_id = $_POST['delete_id'];
 
-    $projectIds = $query->select('projects', 'id', "WHERE category_id = $delete_id");
+    $projectIds = $query->select('projects', 'id', "category_id = ?", [$delete_id], 'i');
 
     foreach ($projectIds as $project) {
         $projectId = $project['id'];
-        $imagesUrl = $query->select('project_images', '*', "WHERE project_id = $projectId");
+        $imagesUrl = $query->select('project_images', '*', "project_id = ?", [$projectId], 'i');
         foreach ($imagesUrl as $image) {
             $imageUrl = "../assets/img/projects/" . $image['image_url'];
             if (file_exists($imageUrl)) {
@@ -53,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             }
         }
     }
-    $query->eQuery('DELETE FROM category WHERE id = ?', [$delete_id]);
+    $query->delete('category', 'id = ?', [$delete_id], 'i');
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
