@@ -7,14 +7,14 @@ $query->checkUserSession('admin');
 
 // Fetch projects
 $projects = $query->select('projects', '*');
-$categories = $query->eQuery('SELECT * FROM category');
+$categories = $query->select('category', '*');
 
 // project deletion process
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete' && isset($_POST['delete_id'])) {
     $delete_id = intval($_POST['delete_id']);
 
     // Delete images
-    $imagesUrl = $query->select('project_images', '*', "WHERE project_id = $delete_id");
+    $imagesUrl = $query->select('project_images', '*', "project_id = ?", [$delete_id], 'i');
     foreach ($imagesUrl as $image) {
         $imageUrl = "../assets/img/projects/" . $image['image_url'];
         if (file_exists($imageUrl)) {
@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     }
 
     // Delete the project
-    $query->eQuery('DELETE FROM projects WHERE id = ?', [$delete_id]);
-    exit('success');
+    $query->delete('projects', 'id = ?', [$delete_id], 'i');
+    exit;
 }
 
 // project addition process
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include 'includes/header.php' ?>
+        <?php include 'header.php' ?>
         <div class="content-wrapper">
 
             <section class="content">
@@ -202,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             </section>
         </div>
 
-        <?php include 'includes/footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </div>
 
     <script src="../assets/js/jquery.min.js"></script>
