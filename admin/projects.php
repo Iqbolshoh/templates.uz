@@ -184,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                     <label for="category_id">Select Category</label>
                                                     <select class="form-control" name="category_id" id="category_id"
                                                         required>
-                                                        <option value="">Select Category</option>
+                                                        <option value="" disabled selected>Select Category</option>
                                                         <?php foreach ($categories as $category): ?>
                                                             <option value="<?php echo $category['id']; ?>">
                                                                 <?php echo htmlspecialchars($category['category_name']); ?>
@@ -193,9 +193,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="image">Upload Images (up to 10)</label>
-                                                    <input type="file" class="form-control" name="image[]"
-                                                        id="projectImage" accept="image/*" multiple required>
+                                                    <label class="form-label fw-bold">Upload Images (up to 10)</label>
+                                                    <div class="input-group">
+                                                        <input type="file" name="image[]" id="projectImage"
+                                                            accept="image/*" multiple required style="display: none;">
+
+                                                        <label for="projectImage" style="background-color: white; /* Tugma foni oq */
+                                                            color: #007bff; 
+                                                            border: 2px solid #007bff; 
+                                                            border-radius: 5px; 
+                                                            padding: 12px; 
+                                                            cursor: pointer; 
+                                                            transition: 0.3s; 
+                                                            width: 100%; 
+                                                            text-align: center; 
+                                                            font-weight: bold; 
+                                                            display: inline-block;">
+                                                            📂 Upload Images
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
