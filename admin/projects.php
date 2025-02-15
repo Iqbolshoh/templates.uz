@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
     // Delete the project
     $query->delete('projects', 'id = ?', [$delete_id], 'i');
-    exit;
+    exit('success');
 }
 
 // project addition process
@@ -243,7 +243,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                         success: function (response) {
                             if (response === 'success') {
                                 $('#project' + id).remove();
-                                Swal.fire("Deleted!", "project deleted successfully!", "success");
                             } else {
                                 Swal.fire("Error!", "An error occurred!", "error");
                             }
