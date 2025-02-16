@@ -19,7 +19,9 @@ if (
 
     $data = [
         'first_name' => $first_name,
-        'last_name' => $last_name
+        'last_name' => $last_name,
+        'profile_picture' => 'default.png',
+        'updated_at' => date('Y-m-d H:i:s')
     ];
 
     if (!empty($_POST['password'])) {
@@ -30,17 +32,19 @@ if (
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
         $imageTmpPath = $_FILES['profile_image']['tmp_name'];
         $imageExt = strtolower(pathinfo($_FILES['profile_image']['name'], PATHINFO_EXTENSION));
-    
+
         $encryptedName = bin2hex(random_bytes(16)) . '_' . uniqid('', true) . '.' . $imageExt;
         $targetFile = "../assets/img/profiles/" . $encryptedName;
-    
+
         if (move_uploaded_file($imageTmpPath, $targetFile)) {
             $data['profile_picture'] = $encryptedName;
         }
-    }    
+    }
 
     $update = $query->update("users", $data, "id = ?", [$_SESSION['user_id']], "i");
 
+    print_r($data);
+    exit;
     if ($update) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         ?>
