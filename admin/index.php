@@ -31,13 +31,12 @@ if (
 
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
         $imageTmpPath = $_FILES['profile_image']['tmp_name'];
-        $imageExt = strtolower(pathinfo($_FILES['profile_image']['name'], PATHINFO_EXTENSION));
-
-        $encryptedName = bin2hex(random_bytes(16)) . '_' . uniqid('', true) . '.' . $imageExt;
-        $targetFile = "../assets/img/profiles/" . $encryptedName;
+        
+        $encrypted_name = md5(bin2hex(random_bytes(32)) . '_' . bin2hex(random_bytes(16)) . '_' . uniqid('', true)) . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
+        $targetFile = "../assets/img/profiles/" . $encrypted_name;
 
         if (move_uploaded_file($imageTmpPath, $targetFile)) {
-            $data['profile_picture'] = $encryptedName;
+            $data['profile_picture'] = $encrypted_name;
         }
     }
 
