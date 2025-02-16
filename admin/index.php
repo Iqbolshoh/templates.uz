@@ -27,6 +27,18 @@ if (
         $query->delete('active_sessions', 'user_id = ? AND session_token <> ?', [$_SESSION['user_id'], session_id()], 'is');
     }
 
+    if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
+        $imageTmpPath = $_FILES['profile_image']['tmp_name'];
+
+        $encryptedName = md5(bin2hex(random_bytes(32)) . '_' . bin2hex(random_bytes(16)) . '_' . uniqid('', true)) . '.' . pathinfo($_FILES['profile_image']['name'], PATHINFO_EXTENSION);
+
+        $targetFile = "../assets/img/profiles/" . $encryptedName;
+
+        if (move_uploaded_file($imageTmpPath, $targetFile)) {
+            $data['profile_picture'] = $encryptedName;
+        }
+    }
+
     $update = $query->update("users", $data, "id = ?", [$_SESSION['user_id']], "i");
 
     if ($update) {
