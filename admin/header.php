@@ -134,8 +134,13 @@ $activePage = $activePageInfo['activePage'] ?? null;
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="../assets/img/profile_picture/<?= $query->select("users", '*', "id = ?", [$_SESSION['user_id']], 'i')[0]['profile_picture'] ?>"
-                    class="img-circle elevation-2" alt="User Image">
+                <?php
+                $filePath = "../assets/img/profile_picture/" . $query->select("users", '*', "id = ?", [$_SESSION['user_id']], 'i')[0]['profile_picture'];
+                if (!file_exists($filePath)) {
+                    $filePath = "../assets/img/profile_picture/default.png";
+                }
+                ?>
+                <img src="<?= $filePath ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info"><a href="./" class="d-block">Iqbolshoh Ilhomjonov</a></div>
         </div>
