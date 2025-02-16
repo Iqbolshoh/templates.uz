@@ -73,7 +73,7 @@ if (
                                     <h4>Update Profile</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form method="POST">
+                                    <form method="POST" enctype="multipart/form-data">
                                         <div class="mb-3">
                                             <label class="form-label">First Name</label>
                                             <input type="text" name="first_name" class="form-control"
