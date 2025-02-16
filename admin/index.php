@@ -29,8 +29,8 @@ if (
         $query->delete('active_sessions', 'user_id = ? AND session_token <> ?', [$_SESSION['user_id'], session_id()], 'is');
     }
 
-    if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
-        $imageTmpPath = $_FILES['profile_image']['tmp_name'];
+    if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
+        $imageTmpPath = $_FILES['profile_picture']['tmp_name'];
 
         $encrypted_name = md5(bin2hex(random_bytes(32)) . '_' . bin2hex(random_bytes(16)) . '_' . uniqid('', true)) . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
         $targetFile = "../assets/img/profiles/" . $encrypted_name;
