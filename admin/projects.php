@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     if (isset($_FILES['image']) && count($_FILES['image']['name']) <= 10) {
         foreach ($_FILES['image']['name'] as $i => $image_name) {
             if ($_FILES['image']['error'][$i] == 0) {
-                $encrypted_name = md5(md5(uniqid(mt_rand(), true)) . time() . $image_name) . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
+                $encrypted_name = bin2hex(random_bytes(16)) . '_' . time() . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
                 $target_file = "../assets/img/projects/" . $encrypted_name;
 
                 if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $target_file)) {
