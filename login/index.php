@@ -174,9 +174,6 @@ if (
                 <button type="submit" name="submit" id="submit">Login</button>
             </div>
         </form>
-        <div class="text-center">
-            <p>Don't have an account? <a href="../signup/">Sign Up</a></p>
-        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
