@@ -126,7 +126,7 @@ if (
                                             <label class="form-label fw-bold">Upload Image</label>
                                             <div class="input-group">
                                                 <input type="file" name="profile_picture" id="profile_picture"
-                                                    accept="image/*" required style="display: none;">
+                                                    accept="image/*" style="display: none;">
                                                 <label for="profile_picture" style="background-color: white;
                                                     color: #007bff; 
                                                     border: 2px solid #007bff; 
