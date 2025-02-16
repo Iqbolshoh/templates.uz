@@ -1,27 +1,27 @@
-# PHP Business Website
+# Templates.uz
 
-The `php-business-website` is a business website template created using PHP and HTML/CSS. This project is designed for various businesses, providing a modern and professional online presence. The template is highly customizable, allowing users to adapt its design and features according to their needs.
+The `templates.uz` is a business website template created using PHP and HTML/CSS. This project is designed for various businesses, providing a modern and professional online presence. The template is highly customizable, allowing users to adapt its design and features according to their needs.
 
-![Business Website Banner](https://github.com/Iqbolshoh/php-business-website/blob/main/assets/img/banner-1.png)
+![Business Website Banner](https://github.com/Iqbolshoh/templates.uz/blob/main/assets/img/banner-1.png)
 
 ### Project Characteristics
 
 - **Multi-Purpose:** This template is suitable for various business fields, such as services, product sales, marketing, and more. It provides a flexible solution for any business type, ensuring that you can easily present your brand and offerings online.
 
-![Business Website Banner](https://github.com/Iqbolshoh/php-business-website/blob/main/assets/img/banner-2.png)
+![Business Website Banner](https://github.com/Iqbolshoh/templates.uz/blob/main/assets/img/banner-2.png)
 
 ### Admin Panel
 
 The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
 
-![Admin Panel](https://github.com/Iqbolshoh/php-business-website/blob/main/assets/img/admin-panel-1.png)
+![Admin Panel](https://github.com/Iqbolshoh/templates.uz/blob/main/assets/img/admin-panel-1.png)
 
 ### Admin Panel Features:
 - Content Management: Easily update text, images, and other site elements.
 - Portfolio Management: Add or remove services and products to showcase.
 - User Management: Manage user accounts and access levels for your team.
 
-![Admin Panel](https://github.com/Iqbolshoh/php-business-website/blob/main/assets/img/admin-panel-2.png)
+![Admin Panel](https://github.com/Iqbolshoh/templates.uz/blob/main/assets/img/admin-panel-2.png)
 
 ### Key Features
 
@@ -51,17 +51,17 @@ To get started with this project, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/Iqbolshoh/php-business-website.git
+   git clone https://github.com/Iqbolshoh/templates.uz.git
    ```
 
 2. **Navigate to the Project:**
    ```bash
-   cd php-business-website
+   cd templates.uz
    ```
 
 3. **Set Up the Website:**
    - Host it on a server that supports PHP (like Apache or Nginx).
-   - Open `http://localhost/php-business-website` in your browser.
+   - Open `http://localhost/templates.uz` in your browser.
 
 ## Contributing
 
