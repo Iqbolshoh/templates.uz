@@ -197,12 +197,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
                                                     <div class="input-group">
                                                         <input type="file" name="image[]" id="projectImage"
                                                             accept="image/*" multiple required style="display: none;">
-
-                                                        <label for="projectImage" style="background-color: white; /* Tugma foni oq */
+                                                        <label for="projectImage" style="background-color: white;
                                                             color: #007bff; 
                                                             border: 2px solid #007bff; 
                                                             border-radius: 5px; 
-                                                            padding: 12px; 
+                                                            padding: 7px; 
                                                             cursor: pointer; 
                                                             transition: 0.3s; 
                                                             width: 100%; 

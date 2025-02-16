@@ -106,6 +106,26 @@ if (
                                             </div>
                                             <small id="password-message" class="text-danger"></small>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="form-label fw-bold">Upload Image</label>
+                                            <div class="input-group">
+                                                <input type="file" name="profile_picture" id="profile_picture"
+                                                    accept="image/*" required style="display: none;">
+                                                <label for="profile_picture" style="background-color: white;
+                                                    color: #007bff; 
+                                                    border: 2px solid #007bff; 
+                                                    border-radius: 5px; 
+                                                    padding: 7px; 
+                                                    cursor: pointer; 
+                                                    transition: 0.3s; 
+                                                    width: 100%; 
+                                                    text-align: center; 
+                                                    font-weight: bold; 
+                                                    display: inline-block;">
+                                                    📂 Upload Image
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="mb-3">
                                             <input type="hidden" name="csrf_token"
                                                 value="<?= $_SESSION['csrf_token']; ?>">
