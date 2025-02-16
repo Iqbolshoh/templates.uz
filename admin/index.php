@@ -33,15 +33,17 @@ if (
         $encrypted_name = md5(bin2hex(random_bytes(32)) . '_' . bin2hex(random_bytes(16)) . '_' . uniqid('', true)) . '.' . pathinfo($_FILES['profile_picture']['name'], PATHINFO_EXTENSION);
         $targetFile = "../assets/img/profile_picture/" . $encrypted_name;
 
+        if ($user['profile_picture'] !== 'default.png') {
+            unlink($targetFile . $user['profile_picture']);
+        }
+
         if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
             $data['profile_picture'] = $encrypted_name;
         }
     }
 
     $update = $query->update("users", $data, "id = ?", [$_SESSION['user_id']], "i");
-
-    print_r($data);
-    exit;
+    
     if ($update) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         ?>
