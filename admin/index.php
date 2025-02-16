@@ -32,7 +32,7 @@ if (
     if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
         $extension = pathinfo($_FILES['profile_picture']['name'], PATHINFO_EXTENSION);
         $encrypted_name = bin2hex(random_bytes(32)) . '.' . $extension;
-        $targetFile = "../assets/img/profiles/" . $encrypted_name;
+        $targetFile = "../assets/img/profile_picture/" . $encrypted_name;
 
         if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetFile)) {
             $data['profile_picture'] = $encrypted_name;
