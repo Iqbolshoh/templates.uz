@@ -27,15 +27,32 @@ if (
         $query->delete('active_sessions', 'user_id = ? AND session_token <> ?', [$_SESSION['user_id'], session_id()], 'is');
     }
 
+    // Profil rasmini yuklash
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
         $imageTmpPath = $_FILES['profile_image']['tmp_name'];
+        $imageSize = $_FILES['profile_image']['size'];
+        $imageExt = strtolower(pathinfo($_FILES['profile_image']['name'], PATHINFO_EXTENSION));
 
-        $encryptedName = md5(bin2hex(random_bytes(32)) . '_' . bin2hex(random_bytes(16)) . '_' . uniqid('', true)) . '.' . pathinfo($_FILES['profile_image']['name'], PATHINFO_EXTENSION);
+        // Ruxsat etilgan fayl kengaytmalari
+        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
 
-        $targetFile = "../assets/img/profiles/" . $encryptedName;
+        // Maksimal rasm hajmi (2MB)
+        $maxFileSize = 2 * 1024 * 1024;
 
-        if (move_uploaded_file($imageTmpPath, $targetFile)) {
-            $data['profile_picture'] = $encryptedName;
+        if (!in_array($imageExt, $allowedExtensions)) {
+            echo "<script>Swal.fire({ icon: 'error', title: 'Invalid File', text: 'Only JPG, JPEG, PNG, GIF files are allowed!' });</script>";
+        } elseif ($imageSize > $maxFileSize) {
+            echo "<script>Swal.fire({ icon: 'error', title: 'File Too Large', text: 'Maximum allowed file size is 2MB!' });</script>";
+        } else {
+            // Yangi noyob nom yaratish
+            $encryptedName = bin2hex(random_bytes(16)) . '_' . uniqid('', true) . '.' . $imageExt;
+            $targetFile = "../assets/img/profiles/" . $encryptedName;
+
+            if (move_uploaded_file($imageTmpPath, $targetFile)) {
+                $data['profile_picture'] = $encryptedName;
+            } else {
+                echo "<script>Swal.fire({ icon: 'error', title: 'Upload Failed', text: 'Failed to move uploaded file!' });</script>";
+            }
         }
     }
 
