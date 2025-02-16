@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             if ($_FILES['image']['error'][$i] == 0) {
                 $encrypted_name = bin2hex(random_bytes(32)) . '_' . bin2hex(random_bytes(16)) . '_' . uniqid('', true) . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
                 $target_file = "../assets/img/projects/" . $encrypted_name;
-
                 if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $target_file)) {
                     $uploadedImages[] = $encrypted_name;
                 }
