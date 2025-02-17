@@ -34,7 +34,7 @@ if (
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     ?>
     <script>
-      window.onload = function () { Swal.fire({ icon: 'success', title: 'Success!', text: 'Your message has been sent successfully.', timer: 1500, showConfirmButton: false }).then(() => { window.location.href("<?php echo $_SERVER['PHP_SELF']; ?>"); }); }; 
+      window.onload = function () { Swal.fire({ icon: 'success', title: 'Success!', text: 'Your message has been sent successfully.', timer: 1500, showConfirmButton: false }).then(() => { window.location.replace("./contact.php"); }); }; 
     </script>
     <?php
   } else {
