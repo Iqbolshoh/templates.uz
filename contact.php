@@ -26,22 +26,12 @@ if (
   ];
 
   $result = $query->insert('messages', $data);
-  ?>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <?php
+
   if ($result) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-    ?>
-    <script>
-      window.onload = function () { Swal.fire({ icon: 'success', title: 'Success!', text: 'Your message has been sent successfully.', timer: 1500, showConfirmButton: false }).then(() => { window.location.href("<?php echo $_SERVER['PHP_SELF']; ?>"); }); }; 
-    </script>
-    <?php
+    echo json_encode(['status' => 'success', 'message' => 'Your message has been sent. Thank you!']);
   } else {
-    ?>
-    <script>
-      window.onload = function () { Swal.fire({ icon: 'error', title: 'Error!', text: 'An error occurred while sending the message. Please try again!', timer: 2000, showConfirmButton: true }); }; 
-    </script>
-    <?php
+    echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending the message.']);
   }
 }
 ?>
@@ -172,9 +162,7 @@ if (
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-
-  <!-- Main JS File -->
-  
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
