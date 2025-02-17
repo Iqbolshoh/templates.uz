@@ -10,6 +10,12 @@
 </head>
 
 <style>
+    :root {
+        --background-color: #f4f4f4;
+        --default-color: #444444;
+        --accent-color: #e96b56;
+    }
+
     * {
         margin: 0;
         padding: 0;
@@ -18,8 +24,8 @@
     }
 
     body {
-        background-color: #f4f4f4;
-        color: #333;
+        background-color: var(--background-color);
+        color: var(--default-color);
         font-size: 16px;
     }
 
@@ -33,7 +39,7 @@
     }
 
     .error-content {
-        background: white;
+        background: var(--background-color);
         padding: 40px;
         border-radius: 8px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -42,14 +48,14 @@
 
     .error-code {
         font-size: 8em;
-        color: #7d2ae8;
+        color: var(--accent-color);
         margin-bottom: 20px;
         animation: scaleUp 1s ease-out;
     }
 
     .error-message {
         font-size: 1.5em;
-        color: #555;
+        color: var(--default-color);
         margin-bottom: 20px;
         animation: fadeInUpText 1s ease-out;
     }
@@ -57,8 +63,8 @@
     .back-home {
         display: inline-block;
         padding: 10px 20px;
-        background: #7d2ae8;
-        color: white;
+        background: var(--accent-color);
+        color: var(--background-color);
         text-decoration: none;
         border-radius: 5px;
         font-weight: 600;
@@ -67,7 +73,7 @@
     }
 
     .back-home:hover {
-        background: #5a1f9a;
+        background: rgb(237, 122, 101);
         transform: scale(1.1);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
@@ -118,18 +124,6 @@
         }
     }
 
-    @keyframes fadeInUpButton {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
     @keyframes bounce {
 
         0%,
@@ -152,6 +146,7 @@
             <a href="https://templates.uz/" class="back-home">Go to Home</a>
         </div>
     </main>
+
 </body>
 
 </html>
