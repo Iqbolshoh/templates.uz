@@ -22,7 +22,6 @@ if (
     $data = [
         'first_name' => $first_name,
         'last_name' => $last_name,
-        'profile_picture' => 'default.png',
         'updated_at' => date('Y-m-d H:i:s')
     ];
 
