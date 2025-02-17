@@ -26,12 +26,22 @@ if (
   ];
 
   $result = $query->insert('messages', $data);
-
+  ?>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php
   if ($result) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-    echo json_encode(['status' => 'success', 'message' => 'Your message has been sent. Thank you!']);
+    ?>
+    <script>
+      window.onload = function () { Swal.fire({ icon: 'success', title: 'Success!', text: 'Your message has been sent successfully.', timer: 1500, showConfirmButton: false }).then(() => { window.location.href("<?php echo $_SERVER['PHP_SELF']; ?>"); }); }; 
+    </script>
+    <?php
   } else {
-    echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending the message.']);
+    ?>
+    <script>
+      window.onload = function () { Swal.fire({ icon: 'error', title: 'Error!', text: 'An error occurred while sending the message. Please try again!', timer: 2000, showConfirmButton: true }); }; 
+    </script>
+    <?php
   }
 }
 ?>
@@ -164,8 +174,7 @@ if (
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
