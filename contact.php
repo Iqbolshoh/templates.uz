@@ -131,7 +131,7 @@ if (
                   <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
                 </div>
                 <div class="col-md-12 text-center">
-                  <button type="submit">Send Message</button>
+                  <button type="submit" name="submit">Send Message</button>
                   <div class="sent-message" style="display: none;">Your message has been sent successfully!</div>
                   <div class="error-message" style="display: none;"></div>
                 </div>
