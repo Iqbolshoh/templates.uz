@@ -22,7 +22,8 @@ if (
     'name' => $name,
     'email' => $email,
     'subject' => $subject,
-    'message' => $message
+    'message' => $message,
+    'created_at' => date('Y-m-d H:i:s')
   ];
 
   $result = $query->insert('messages', $data);
