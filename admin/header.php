@@ -80,7 +80,7 @@ $pageTitle = $activePageInfo['pageTitle'] ?? '';
 $activeMenu = $activePageInfo['activeMenu'] ?? null;
 $activePage = $activePageInfo['activePage'] ?? null;
 
-$messages_count = 5;
+$messages_count = $query->select('messages', '*', 'status = ?', ['no_checked'], 's');
 ?>
 
 <title><?= $pageTitle ?></title>
@@ -102,8 +102,14 @@ $messages_count = 5;
         </div>
     </form>
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown"><a class="nav-link" href="./messages.php"><i class="far fa-comments"></i><span
-                    class="badge badge-danger navbar-badge"><?= $messages_count ?></span></a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="./messages.php">
+                <i class="far fa-comments"></i>
+                <?php if (!empty($messages_count)): ?>
+                    <span class="badge badge-danger navbar-badge"><?= $messages_count ?></span>
+                <?php endif; ?>
+            </a>
+        </li>
     </ul>
 </nav>
 
