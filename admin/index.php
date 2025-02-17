@@ -7,6 +7,8 @@ $query->checkUserSession('admin');
 
 $user = $query->select("users", '*', "id = ?", [$_SESSION['user_id']], 'i')[0];
 
+$_SESSION['csrf_token'] ??= bin2hex(random_bytes(32));
+
 if (
     $_SERVER["REQUEST_METHOD"] === "POST" &&
     isset($_POST['submit']) &&
