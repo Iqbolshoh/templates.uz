@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $query->insert('messages', $data);
 
     if ($result) {
-        echo json_encode(['status' => 'success', 'message' => 'Xabaringiz yuborildi. Rahmat!']);
+        echo json_encode(['status' => 'success', 'message' => 'Your message has been sent. Thank you!']);
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Xabar yuborishda xatolik yuz berdi.']);
+        echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending the message.']);
     }
 }
