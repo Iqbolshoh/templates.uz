@@ -174,39 +174,7 @@ if (
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <!-- Main JS File -->
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Ensure the form submission happens only once
-      const submitButton = e.target.querySelector('button[type="submit"]');
-      submitButton.disabled = true;
-
-      const formData = new FormData(this);
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', '', true);
-      xhr.onload = function () {
-        if (this.status === 200) {
-          const response = JSON.parse(this.responseText);
-          if (response.status === 'success') {
-            document.querySelector('.sent-message').style.display = 'block';
-            document.querySelector('.error-message').style.display = 'none';
-            setTimeout(() => {
-              document.querySelector('.sent-message').style.display = 'none';
-            }, 3000);
-            document.getElementById('contactForm').reset();
-          } else {
-            document.querySelector('.error-message').textContent = response.message;
-            document.querySelector('.error-message').style.display = 'block';
-            document.querySelector('.sent-message').style.display = 'none';
-          }
-        }
-        submitButton.disabled = false;
-      };
-      xhr.send(formData);
-    });
-  </script>
-
+  
 </body>
 
 </html>
