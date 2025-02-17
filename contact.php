@@ -1,6 +1,39 @@
 <?php
+session_start();
+
 include './config.php';
 $query = new Database();
+
+$_SESSION['csrf_token'] ??= bin2hex(random_bytes(32));
+
+if (
+  $_SERVER["REQUEST_METHOD"] === "POST" &&
+  isset($_POST['submit']) &&
+  isset($_POST['csrf_token']) &&
+  isset($_SESSION['csrf_token']) &&
+  hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])
+) {
+  $name = $query->validate($_POST['name']);
+  $email = $query->validate($_POST['email']);
+  $subject = $query->validate($_POST['subject']);
+  $message = $query->validate($_POST['message']);
+
+  $data = [
+    'name' => $name,
+    'email' => $email,
+    'subject' => $subject,
+    'message' => $message
+  ];
+
+  $result = $query->insert('messages', $data);
+
+  if ($result) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    echo json_encode(['status' => 'success', 'message' => 'Your message has been sent. Thank you!']);
+  } else {
+    echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending the message.']);
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +49,9 @@ $query = new Database();
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -74,8 +109,7 @@ $query = new Database();
 
           <div class="col-lg-6">
 
-            <form action="send_message.php" method="post" class="php-email-form" id="contactForm" data-aos="fade-up"
-              data-aos-delay="100">
+            <form method="post" class="php-email-form" id="contactForm" data-aos="fade-up" data-aos-delay="100">
               <div class="row gy-4">
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" required=""
@@ -92,8 +126,10 @@ $query = new Database();
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
                 </div>
+                <div class="col-md-12">
+                  <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
+                </div>
                 <div class="col-md-12 text-center">
-
                   <button type="submit">Send Message</button>
                   <div class="sent-message" style="display: none;">Your message has been sent successfully!</div>
                   <div class="error-message" style="display: none;"></div>
@@ -102,7 +138,7 @@ $query = new Database();
             </form>
 
           </div><!-- End of Contact Form -->
-          
+
         </div>
 
       </div>
