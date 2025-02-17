@@ -80,7 +80,7 @@ $pageTitle = $activePageInfo['pageTitle'] ?? '';
 $activeMenu = $activePageInfo['activeMenu'] ?? null;
 $activePage = $activePageInfo['activePage'] ?? null;
 
-$messages_count = $query->select('messages', '*', 'status = ?', ['no_checked'], 's');
+$messages_count = count($query->select('messages', 'id', 'status = ?', ['no_checked'], 's'));
 ?>
 
 <title><?= $pageTitle ?></title>
