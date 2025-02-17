@@ -185,7 +185,7 @@ if (
 
       const formData = new FormData(this);
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'send_message.php', true);
+      xhr.open('POST', '', true);
       xhr.onload = function () {
         if (this.status === 200) {
           const response = JSON.parse(this.responseText);
