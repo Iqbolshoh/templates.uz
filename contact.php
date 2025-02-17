@@ -33,6 +33,7 @@ if (
   } else {
     echo json_encode(['status' => 'error', 'message' => 'An error occurred while sending the message.']);
   }
+  exit;
 }
 ?>
 
