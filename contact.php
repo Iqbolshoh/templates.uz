@@ -174,7 +174,6 @@ if (
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <!-- Main JS File -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
