@@ -8,11 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = $query->validate($_POST['subject']);
     $message = $query->validate($_POST['message']);
 
-    $sql = "INSERT INTO messages (name, email, subject, message) VALUES (?, ?, ?, ?)";
+    $data = [
+        'name' => $name,
+        'email' => $email,
+        'subject' => $subject,
+        'message' => $message
+    ];
 
-    $params = [$name, $email, $subject, $message];
-
-    $result = $query->eQuery($sql, $params);
+    $result = $query->insert('messages', $data);
 
     if ($result) {
         echo json_encode(['status' => 'success', 'message' => 'Xabaringiz yuborildi. Rahmat!']);
