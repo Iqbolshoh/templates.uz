@@ -3,7 +3,7 @@ include './config.php';
 $query = new Database();
 $banners = $query->select('banners', '*');
 $features = $query->select('features', '*');
-$aboutData = $query->select('about');
+$aboutData = $query->select('about', '*');
 $serviceItems  = $query->select('about_ul_items', '*');
 $services = $query->select('services', '*');
 
