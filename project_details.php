@@ -35,8 +35,8 @@ if ($project) {
   <meta name="author" content="Templates.uz">
   <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="<?= htmlspecialchars($project[0]['project_name']); ?>">
-  <meta property="og:description" content="<?= htmlspecialchars($project[0]['description']); ?>">
+  <meta property="og:title" content="<?= htmlspecialchars($project['project_name']); ?>">
+  <meta property="og:description" content="<?= htmlspecialchars($project['description']); ?>">
   <meta property="og:image" content="https://templates.uz/assets/img/projects/<?= $project_images[0]; ?>">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
@@ -44,8 +44,8 @@ if ($project) {
   <meta property="og:url" content="https://templates.uz/project_details.php?id=<?= $id; ?>">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="<?= htmlspecialchars($project[0]['project_name']); ?>">
-  <meta name="twitter:description" content="<?= htmlspecialchars($project[0]['description']); ?>">
+  <meta name="twitter:title" content="<?= htmlspecialchars($project['project_name']); ?>">
+  <meta name="twitter:description" content="<?= htmlspecialchars($project['description']); ?>">
   <meta name="twitter:image" content="https://templates.uz/assets/img/projects/<?= $project_images[0]; ?>">
 
   <link href="favicon.ico" rel="icon">
