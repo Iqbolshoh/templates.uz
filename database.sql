@@ -54,38 +54,38 @@ CREATE TABLE statistics (
     description VARCHAR(255)
 );
 
-CREATE TABLE about (
+CREATE TABLE about_section (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    p1 TEXT NOT NULL,
-    p2 TEXT NOT NULL,
-    image VARCHAR(255)
+    description TEXT NOT NULL,
+    details TEXT NOT NULL,
+    image_url VARCHAR(255)
 );
 
-CREATE TABLE about_ul_items (
+CREATE TABLE about_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
     about_id INT,
     list_item TEXT NOT NULL,
-    FOREIGN KEY (about_id) REFERENCES about(id)
+    FOREIGN KEY (about_id) REFERENCES about_section(id)
 );
 
-CREATE TABLE services (
+CREATE TABLE service (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     icon VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE bioServices (
+CREATE TABLE service_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    h2 VARCHAR(255) NOT NULL,
-    p1 TEXT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
     image VARCHAR(255),
-    h3 TEXT NOT NULL,
-    p2 TEXT NOT NULL
+    subtitle TEXT NOT NULL,
+    additional_info TEXT NOT NULL
 );
 
-CREATE TABLE ourServices (
+CREATE TABLE team_services (
     id INT AUTO_INCREMENT PRIMARY KEY,
     service_name VARCHAR(255) NOT NULL,
     skill_level INT NOT NULL
@@ -93,10 +93,10 @@ CREATE TABLE ourServices (
 
 CREATE TABLE contact (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    twitter VARCHAR(255),
-    facebook VARCHAR(255),
+    telegram VARCHAR(255),
     instagram VARCHAR(255),
-    linkedin VARCHAR(255)
+    youtube VARCHAR(255),
+    github VARCHAR(255)
 );
 
 CREATE TABLE contact_box (
