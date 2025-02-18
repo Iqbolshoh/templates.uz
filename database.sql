@@ -65,21 +65,27 @@ CREATE TABLE about_section (
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     details TEXT NOT NULL,
-    image_url VARCHAR(255)
+    image_url VARCHAR(255),
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE about_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
     about_id INT,
     list_item TEXT NOT NULL,
-    FOREIGN KEY (about_id) REFERENCES about_section(id)
+    FOREIGN KEY (about_id) REFERENCES about_section(id),
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE service (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
-    icon VARCHAR(50) NOT NULL
+    icon VARCHAR(50) NOT NULL,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE service_details (
@@ -88,13 +94,17 @@ CREATE TABLE service_details (
     description TEXT NOT NULL,
     image VARCHAR(255),
     subtitle TEXT NOT NULL,
-    additional_info TEXT NOT NULL
+    additional_info TEXT NOT NULL,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE team_services (
     id INT AUTO_INCREMENT PRIMARY KEY,
     service_name VARCHAR(255) NOT NULL,
-    skill_level INT NOT NULL
+    skill_level INT NOT NULL,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE contact (
