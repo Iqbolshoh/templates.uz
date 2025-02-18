@@ -31,12 +31,22 @@ foreach ($serviceItems as $item) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Templates.uz - Web Development & IT Services</title>
+
   <meta name="description"
     content="Templates.uz provides professional web development, bot creation, frontend, and backend services to help businesses establish a strong digital presence.">
   <meta name="keywords"
     content="web, development, design, frontend, backend, SEO, IT, business, Laravel, PHP, JavaScript, Templates.uz, dasturlash, bot, IT-services, IT-xizmatlar, veb-sayt, sayt yaratish, web-development, software, coding, programming, host, hosting, domain, server, cloud, avtomatlashtirish, biznes, e-commerce, startup, digital, veb-ishlab chiqish, full-stack, Iqbolshoh.uz, Iqbolshoh_777, Iqbolshoh_dev">
   <meta name="author" content="Templates.uz">
   <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Facebook, Telegram) -->
+  <meta property="og:title" content="Templates.uz - Web Development & IT Services">
+  <meta property="og:description"
+    content="Templates.uz provides professional web development, bot creation, and IT solutions for businesses.">
+  <meta property="og:image" content="https://templates.uz/images/iqbolshoh.png">
+  <meta property="og:url" content="https://templates.uz">
+  <meta property="og:type" content="website">
+
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
