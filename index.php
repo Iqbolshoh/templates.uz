@@ -4,7 +4,7 @@ $query = new Database();
 $banners = $query->select('banners', '*');
 $features = $query->select('features', '*');
 $aboutData = $query->select('about', '*');
-$serviceItems  = $query->select('about_ul_items', '*');
+$serviceItems = $query->select('about_ul_items', '*');
 $services = $query->select('services', '*');
 
 $aboutItems = [];
@@ -30,9 +30,13 @@ foreach ($serviceItems as $item) {
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Home Page</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Templates.uz - Web Development & IT Services</title>
+  <meta name="description"
+    content="Templates.uz provides professional web development, bot creation, frontend, and backend services to help businesses establish a strong digital presence.">
+  <meta name="keywords"
+    content="web, development, design, frontend, backend, SEO, IT, business, Laravel, PHP, JavaScript, Templates.uz, dasturlash, bot, IT-services, IT-xizmatlar, veb-sayt, sayt yaratish, web-development, software, coding, programming, host, hosting, domain, server, cloud, avtomatlashtirish, biznes, e-commerce, startup, digital, veb-ishlab chiqish, full-stack, Iqbolshoh.uz, Iqbolshoh_777, Iqbolshoh_dev">
+  <meta name="author" content="Templates.uz">
+  <meta name="robots" content="index, follow">
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -63,9 +67,12 @@ foreach ($serviceItems as $item) {
           <div class="carousel-item <?php echo ($banner === reset($banners)) ? 'active' : ''; ?>">
             <img src="assets/img/banners/<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>">
             <div class="carousel-container">
-              <h2><?php echo '<span>' . explode(' ', $banner['title'])[0] . '</span> ' . implode(' ', array_slice(explode(' ', $banner['title']), 1)); ?></h2>
+              <h2>
+                <?php echo '<span>' . explode(' ', $banner['title'])[0] . '</span> ' . implode(' ', array_slice(explode(' ', $banner['title']), 1)); ?>
+              </h2>
               <p><?php echo $banner['description']; ?></p>
-              <a href="<?php echo $banner['button_link']; ?>" class="btn-get-started"><?php echo $banner['button_text']; ?></a>
+              <a href="<?php echo $banner['button_link']; ?>"
+                class="btn-get-started"><?php echo $banner['button_text']; ?></a>
             </div>
           </div><!-- End of Carousel Item -->
 
@@ -87,7 +94,7 @@ foreach ($serviceItems as $item) {
           $i = 0;
           foreach ($features as $feature):
             $delay = $i * 100;
-          ?>
+            ?>
             <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
               <div class="featured-item position-relative">
                 <div class="icon"><i class="<?php echo $feature['icon']; ?> icon"></i></div>
@@ -95,7 +102,7 @@ foreach ($serviceItems as $item) {
                 <p><?php echo $feature['description']; ?></p>
               </div>
             </div>
-          <?php
+            <?php
             $i++;
           endforeach;
           ?>
