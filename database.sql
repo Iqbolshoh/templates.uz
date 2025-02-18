@@ -324,7 +324,7 @@ VALUES
         'Bizning tarmog‘imiz orqali ko‘plab imkoniyatlarga ega bo‘ling.'
     );
 
-    INSERT INTO
+INSERT INTO
     statistics (lang_id, icon, count, title, description)
 VALUES
     (
@@ -406,9 +406,45 @@ VALUES
         'Bizning jamoamiz'
     );
 
+INSERT INTO about_section (lang_id, title, description, details, image_url)
+VALUES
+    (1, 'Our Services', 'Our team always strives to achieve the best results. We continue to improve our skills and provide the most effective solutions for our clients.', 'Building long-term and trustworthy partnerships with our clients is our main goal.', 'assets/img/about.jpg'),
+    (2, 'Наши Услуги', 'Наша команда всегда стремится достичь наилучших результатов. Мы продолжаем улучшать свои навыки и предоставлять самые эффективные решения для наших клиентов.', 'Создание долгосрочных и надежных партнерских отношений с нашими клиентами — наша главная цель.', 'assets/img/about.jpg'),
+    (3, 'Bizning Xizmatlarimiz', 'Jamoamiz har doim eng yaxshi natijalarga erishishga intiladi. Biz o‘z malakalarimizni yaxshilashda davom etamiz va mijozlarimiz uchun eng samarali yechimlarni taqdim etamiz.', 'Mijozlarimiz bilan uzoq muddatli va ishonchli hamkorlikni o‘rnatish bizning asosiy maqsadimizdir.', 'assets/img/about.jpg');
 
-    
+INSERT INTO about_details (lang_id, about_id, list_item)
+VALUES
+    (1, 1, 'We provide quality service to our clients and aim to meet their needs.'),
+    (2, 1, 'Мы предоставляем качественные услуги нашим клиентам и стремимся удовлетворить их потребности.'),
+    (3, 1, 'Biz mijozlarimizga sifatli xizmatlar ko‘rsatamiz va ularning ehtiyojlarini qondirishni maqsad qilganmiz.'),
 
+    (1, 1, 'We develop innovative solutions and apply modern technologies.'),
+    (2, 1, 'Мы разрабатываем инновационные решения и применяем современные технологии.'),
+    (3, 1, 'Biz innovatsion yechimlar ishlab chiqamiz va zamonaviy texnologiyalarni qo‘llaymiz.'),
+
+    (1, 1, 'We approach each project individually and offer new solutions.'),
+    (2, 1, 'Мы подходим к каждому проекту индивидуально и предлагаем новые решения.'),
+    (3, 1, 'Har bir loyihaga alohida yondashamiz va yangi yechimlar taklif etamiz.'),
+
+    (1, 1, 'Our experienced professionals assist with any issues.'),
+    (2, 1, 'Наши опытные специалисты помогут с любыми вопросами.'),
+    (3, 1, 'Bizning tajribali mutaxassislarimiz har qanday masalada yordam beradi.'),
+
+    (1, 1, 'Our support service is always open for our clients.'),
+    (2, 1, 'Наша служба поддержки всегда открыта для наших клиентов.'),
+    (3, 1, 'Bizning qo‘llab-quvvatlash xizmati mijozlarimiz uchun har doim ochiq.'),
+
+    (1, 1, 'We improve service quality through innovative approaches.'),
+    (2, 1, 'Мы улучшаем качество обслуживания с помощью инновационных подходов.'),
+    (3, 1, 'Biz xizmat sifatini innovatsion yondashuvlar orqali yaxshilaymiz.'),
+
+    (1, 1, 'We create special strategies for each project.'),
+    (2, 1, 'Мы разрабатываем специальные стратегии для каждого проекта.'),
+    (3, 1, 'Har bir loyiha uchun maxsus strategiyalar ishlab chiqamiz.'),
+
+    (1, 1, 'We help our clients unlock new opportunities.'),
+    (2, 1, 'Мы помогаем нашим клиентам открыть новые возможности.'),
+    (3, 1, 'Biz mijozlarimizga yangi imkoniyatlarni kashf qilishda yordam beramiz.');
 
 INSERT INTO
     bioServices (h2, p1, image, h3, p2)
