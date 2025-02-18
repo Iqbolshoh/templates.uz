@@ -324,51 +324,91 @@ VALUES
         'Bizning tarmog‘imiz orqali ko‘plab imkoniyatlarga ega bo‘ling.'
     );
 
-INSERT INTO
-    about (title, p1, p2, image)
+    INSERT INTO
+    statistics (lang_id, icon, count, title, description)
 VALUES
     (
-        'Our Services',
-        'Our team always strives to achieve the best results. We continue to improve our skills and provide the most effective solutions for our clients.',
-        'Building long-term and trustworthy partnerships with our clients is our main goal.',
-        'assets/img/about.jpg'
+        1,
+        'bi bi-emoji-smile',
+        232,
+        'Happy Clients',
+        'Our success'
+    ),
+    (
+        2,
+        'bi bi-emoji-smile',
+        232,
+        'Счастливые клиенты',
+        'Наш успех'
+    ),
+    (
+        3,
+        'bi bi-emoji-smile',
+        232,
+        'Baxtli mijozlar',
+        'Bizning muvaffaqiyatimiz'
+    ),
+    (
+        1,
+        'bi bi-journal-richtext',
+        521,
+        'Projects',
+        'Our creativity'
+    ),
+    (
+        2,
+        'bi bi-journal-richtext',
+        521,
+        'Проекты',
+        'Наше творчество'
+    ),
+    (
+        3,
+        'bi bi-journal-richtext',
+        521,
+        'Loyihalar',
+        'Bizning ijodkorligimiz'
+    ),
+    (
+        1,
+        'bi bi-headset',
+        1453,
+        'Support Hours',
+        'We are always there for clients'
+    ),
+    (
+        2,
+        'bi bi-headset',
+        1453,
+        'Часы поддержки',
+        'Мы всегда рядом с клиентами'
+    ),
+    (
+        3,
+        'bi bi-headset',
+        1453,
+        'Qo‘llab-quvvatlash soatlari',
+        'Biz mijozlar uchun har doim mavjudmiz'
+    ),
+    (1, 'bi bi-people', 32, 'Workers', 'Our team'),
+    (
+        2,
+        'bi bi-people',
+        32,
+        'Работники',
+        'Наша команда'
+    ),
+    (
+        3,
+        'bi bi-people',
+        32,
+        'Ishchilar',
+        'Bizning jamoamiz'
     );
 
-INSERT INTO
-    about_ul_items (about_id, list_item)
-VALUES
-    (
-        1,
-        'We provide quality service to our clients and aim to meet their needs.'
-    ),
-    (
-        1,
-        'We develop innovative solutions and apply modern technologies.'
-    ),
-    (
-        1,
-        'We approach each project individually and offer new solutions.'
-    ),
-    (
-        1,
-        'Our experienced professionals assist with any issues.'
-    ),
-    (
-        1,
-        'Our support service is always open for our clients.'
-    ),
-    (
-        1,
-        'We improve service quality through innovative approaches.'
-    ),
-    (
-        1,
-        'We create special strategies for each project.'
-    ),
-    (
-        1,
-        'We help our clients unlock new opportunities.'
-    );
+
+    
+
 
 INSERT INTO
     bioServices (h2, p1, image, h3, p2)
@@ -549,88 +589,6 @@ VALUES
         'Client Communication',
         'We maintain open and friendly communication with clients. Your feedback and suggestions are very important to us.',
         'bi-chat-square-text'
-    );
-
-INSERT INTO
-    statistics (lang_id, icon, count, title, description)
-VALUES
-    (
-        1,
-        'bi bi-emoji-smile',
-        232,
-        'Happy Clients',
-        'Our success'
-    ),
-    (
-        2,
-        'bi bi-emoji-smile',
-        232,
-        'Счастливые клиенты',
-        'Наш успех'
-    ),
-    (
-        3,
-        'bi bi-emoji-smile',
-        232,
-        'Baxtli mijozlar',
-        'Bizning muvaffaqiyatimiz'
-    ),
-    (
-        1,
-        'bi bi-journal-richtext',
-        521,
-        'Projects',
-        'Our creativity'
-    ),
-    (
-        2,
-        'bi bi-journal-richtext',
-        521,
-        'Проекты',
-        'Наше творчество'
-    ),
-    (
-        3,
-        'bi bi-journal-richtext',
-        521,
-        'Loyihalar',
-        'Bizning ijodkorligimiz'
-    ),
-    (
-        1,
-        'bi bi-headset',
-        1453,
-        'Support Hours',
-        'We are always there for clients'
-    ),
-    (
-        2,
-        'bi bi-headset',
-        1453,
-        'Часы поддержки',
-        'Мы всегда рядом с клиентами'
-    ),
-    (
-        3,
-        'bi bi-headset',
-        1453,
-        'Qo‘llab-quvvatlash soatlari',
-        'Biz mijozlar uchun har doim mavjudmiz'
-    ),
-    (1, 'bi bi-people', 32, 'Workers', 'Our team'),
-    (
-        2,
-        'bi bi-people',
-        32,
-        'Работники',
-        'Наша команда'
-    ),
-    (
-        3,
-        'bi bi-people',
-        32,
-        'Ishchilar',
-        'Bizning jamoamiz'
     );
 
 INSERT INTO
