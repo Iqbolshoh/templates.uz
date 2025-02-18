@@ -5,21 +5,21 @@ $query = new Database();
 $id = $_GET['id'] ?? 1;
 $project = $query->select('projects', '*', 'id = ?', [$id], 'i');
 
-if ($project && isset($project[0])) {
+if ($project) {
   $project = $project[0];
   $category = $query->select('category', '*', 'id = ?', [$project['category_id']], 'i')[0]['category_name'] ?? 'Unknown';
-
   $project_images = $query->select('project_images', '*', 'project_id = ?', [$id], 'i');
   $project_images = !empty($project_images) ? array_column($project_images, 'image_url') : [];
-} else {
-  $project = null;
-  $category = 'Unknown';
-  $project_images = [];
-}
 
-$title = $project['project_name'] ?? 'Project Details';
-$description = $project['description'] ?? 'Discover our latest project.';
-$keywords = 'web, development, project, IT, business, software, iqbolshoh_777, iqbolshoh_dev, ' . $title;
+  $title = $project['project_name'] ?? 'Project Details';
+  $description = $project['description'] ?? 'Discover our latest project.';
+  $keywords = 'web, development, project, IT, business, software, iqbolshoh_777, iqbolshoh_dev, templates.uz, iqbolshoh.uz, ' . $title;
+  $image = !empty($project_images) ? "assets/img/projects/" . $project_images[0] : 'https://templates.uz/assets/img/iqbolshoh.jpg';
+  $project_link = $project['link'] ?? '#';
+} else {
+  include '404.php';
+  exit;
+}
 ?>
 
 <!DOCTYPE html>
