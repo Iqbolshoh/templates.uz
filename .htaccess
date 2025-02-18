@@ -3,8 +3,8 @@
 
     RewriteCond %{REQUEST_URI} ^/assets/
     RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$   
-    RewriteCond %{REMOTE_ADDR} !^::1$               
-    RewriteRule ^ - [R=403,L] 
+    RewriteCond %{REMOTE_ADDR} !^::1$            
+    RewriteRule ^ - [R=403,L]  
 
     ErrorDocument 403 /404.php
     ErrorDocument 404 /404.php
