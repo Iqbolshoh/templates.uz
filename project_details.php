@@ -13,7 +13,7 @@ if ($project) {
 
   $title = $project['project_name'] ?? 'Project Details';
   $description = $project['description'] ?? 'Discover our latest project.';
-  $keywords = 'web, development, project, IT, business, software, ' . $title;
+  $keywords = 'web, development, project, IT, business, software, iqbolshoh_777, iqbolshoh_dev ' . $title;
   $image = !empty($project_images) ? "assets/img/projects/" . $project_images[0] : 'https://templates.uz/assets/img/iqbolshoh.jpg';
   $project_link = $project['link'] ?? '#';
 }
