@@ -5,18 +5,21 @@ $query = new Database();
 $id = $_GET['id'] ?? 1;
 $project = $query->select('projects', '*', 'id = ?', [$id], 'i');
 
-if ($project) {
+if ($project && isset($project[0])) {
   $project = $project[0];
   $category = $query->select('category', '*', 'id = ?', [$project['category_id']], 'i')[0]['category_name'] ?? 'Unknown';
+
   $project_images = $query->select('project_images', '*', 'project_id = ?', [$id], 'i');
   $project_images = !empty($project_images) ? array_column($project_images, 'image_url') : [];
+} else {
+  $project = null;
+  $category = 'Unknown';
+  $project_images = [];
 }
 
 $title = $project['project_name'] ?? 'Project Details';
 $description = $project['description'] ?? 'Discover our latest project.';
-$keywords = 'web, development, project, IT, business, software, iqbolshoh_777, iqbolshoh_dev, templates.uz, iqbolshoh.uz, ' . $title;
-$image = !empty($project_images) ? "assets/img/projects/" . $project_images[0] : 'https://templates.uz/assets/img/iqbolshoh.jpg';
-$project_link = $project['link'] ?? '#';
+$keywords = 'web, development, project, IT, business, software, iqbolshoh_777, iqbolshoh_dev, ' . $title;
 ?>
 
 <!DOCTYPE html>
@@ -102,14 +105,14 @@ $project_link = $project['link'] ?? '#';
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": { "delay": 5000 },
-                  "slidesPerView": "auto",
-                  "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                }
-              </script>
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": { "delay": 5000 },
+                      "slidesPerView": "auto",
+                      "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                    }
+                  </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
