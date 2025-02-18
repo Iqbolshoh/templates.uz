@@ -26,6 +26,21 @@ $project_link = $project['link'] ?? '#';
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?= htmlspecialchars($title) ?> - Templates.uz</title>
+
+  <meta name="description" content="<?= htmlspecialchars($description) ?>">
+  <meta name="keywords" content="<?= htmlspecialchars($keywords) ?>">
+  <meta name="author" content="Templates.uz">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="<?php echo htmlspecialchars($project[0]['project_name']); ?>">
+  <meta property="og:description" content="<?php echo htmlspecialchars($project[0]['description']); ?>">
+  <meta property="og:image" content="https://templates.uz/assets/img/projects/<?php echo $project_images[0]; ?>">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:url" content="https://templates.uz/project_details.php?id=<?php echo $id; ?>">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -35,19 +50,6 @@ $project_link = $project['link'] ?? '#';
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- Meta teglar -->
-  <meta name="description" content="<?= htmlspecialchars($description) ?>">
-  <meta name="keywords" content="<?= htmlspecialchars($keywords) ?>">
-  <meta name="author" content="Templates.uz">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph (Ijtimoiy tarmoqlar uchun) -->
-  <meta property="og:title" content="<?= htmlspecialchars($title) ?>">
-  <meta property="og:description" content="<?= htmlspecialchars($description) ?>">
-  <meta property="og:image" content="<?= htmlspecialchars($image) ?>">
-  <meta property="og:url" content="https://templates.uz/project.php?id=<?= $id ?>">
-  <meta property="og:type" content="website">
 </head>
 <style>
   .project-not-found {
@@ -96,14 +98,14 @@ $project_link = $project['link'] ?? '#';
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                                {
-                                  "loop": true,
-                                  "speed": 600,
-                                  "autoplay": { "delay": 5000 },
-                                  "slidesPerView": "auto",
-                                  "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                                }
-                              </script>
+                                          {
+                                            "loop": true,
+                                            "speed": 600,
+                                            "autoplay": { "delay": 5000 },
+                                            "slidesPerView": "auto",
+                                            "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                                          }
+                                        </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
