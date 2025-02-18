@@ -177,6 +177,13 @@ VALUES
     );
 
 INSERT INTO
+    languages (language_name)
+VALUES
+    ('Uz'),
+    ('Ru'),
+    ('Eng');
+
+INSERT INTO
     about (title, p1, p2, image)
 VALUES
     (
