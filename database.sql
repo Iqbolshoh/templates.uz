@@ -36,7 +36,9 @@ CREATE TABLE banners (
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     button_text VARCHAR(100) NOT NULL,
-    button_link VARCHAR(255) NOT NULL
+    button_link VARCHAR(255) NOT NULL,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE features (
