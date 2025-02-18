@@ -39,11 +39,10 @@ foreach ($serviceItems as $item) {
   <meta name="author" content="Templates.uz">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (Facebook, Telegram) -->
   <meta property="og:title" content="Templates.uz - Web Development & IT Services">
   <meta property="og:description"
     content="Templates.uz provides professional web development, bot creation, and IT solutions for businesses.">
-  <meta property="og:image" content="https://templates.uz/images/iqbolshoh.png">
+  <meta property="og:image" content="https://templates.uz/assets/img/iqbolshoh.jpg">
   <meta property="og:url" content="https://templates.uz">
   <meta property="og:type" content="website">
 
