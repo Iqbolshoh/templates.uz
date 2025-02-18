@@ -45,7 +45,9 @@ CREATE TABLE features (
     id INT AUTO_INCREMENT PRIMARY KEY,
     icon VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL
+    description TEXT NOT NULL,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE statistics (
