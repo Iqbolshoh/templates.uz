@@ -33,7 +33,7 @@ foreach ($projects as $project) {
   <meta property="og:title" content="Projects - Templates.uz">
   <meta property="og:description"
     content="Explore Templates.uz projects: web development, IT solutions, and custom software.">
-    <meta property="og:image" content="https://templates.uz/assets/img/templates.png">
+  <meta property="og:image" content="https://templates.uz/assets/img/templates.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
   <meta property="og:image:type" content="image/image/png">
