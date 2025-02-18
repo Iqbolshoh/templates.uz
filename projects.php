@@ -21,9 +21,22 @@ foreach ($projects as $project) {
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Projects</title>
-  <meta name="description" content="project listings and details">
-  <meta name="keywords" content="projects, online store, shopping">
+  <title>Projects - Templates.uz</title>
+
+  <meta name="description"
+    content="Check out our latest projects at Templates.uz. We specialize in web development, IT solutions, and custom software development.">
+  <meta name="keywords"
+    content="projects, templates.uz, portfolio, case studies, web development projects, mijozlar loyihalari, IT solutions, real work examples">
+  <meta name="author" content="Templates.uz">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Projects - Templates.uz">
+  <meta property="og:description"
+    content="Explore Templates.uz projects: web development, IT solutions, and custom software.">
+  <meta property="og:image" content="https://templates.uz/assets/img/projects.jpg">
+  <meta property="og:url" content="https://templates.uz/projects">
+  <meta property="og:type" content="website">
+
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -92,7 +105,8 @@ foreach ($projects as $project) {
                       <div class="portfolio-info">
                         <h4><?= $project['project_name'] ?></h4>
                         <p>
-                          <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;" target="_blank">
+                          <a href="<?php echo $project['link']; ?>" style="color: #007BFF; font-weight: 600;"
+                            target="_blank">
                             <?php echo str_replace(['https://', 'http://', 'www.'], '', $project['link']); ?>
                           </a>
                         </p>
