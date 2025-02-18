@@ -1,3 +1,5 @@
+DROP DATABASE templates;
+
 CREATE DATABASE templates;
 
 USE templates;
@@ -158,6 +160,13 @@ CREATE TABLE project_images (
 );
 
 INSERT INTO
+    languages (language_name)
+VALUES
+    ('Eng'),
+    ('Ru'),
+    ('Uz');
+
+INSERT INTO
     users (
         first_name,
         last_name,
@@ -175,13 +184,6 @@ VALUES
         '1f254bb82e64bde20137a2922989f6f57529c98e34d146b523a47898702b7231',
         'admin'
     );
-
-INSERT INTO
-    languages (language_name)
-VALUES
-    ('Eng'),
-    ('Ru'),
-    ('Uz');
 
 INSERT INTO
     banners (
