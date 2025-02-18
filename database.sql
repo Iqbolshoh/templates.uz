@@ -504,30 +504,22 @@ VALUES
     ('Branding'),
     ('Book');
 
-INSERT INTO
-    contact (twitter, facebook, instagram, linkedin)
+INSERT INTO contact (telegram, instagram, youtube, github)
 VALUES
-    (
-        'iqbolshoh_777',
-        '',
-        'iqbolshoh_777',
-        'iiqbolshoh'
-    );
+    ('iqbolshoh_777', 'iqbolshoh_777', 'iqbolshoh_dev', 'iqbolshoh');
 
-INSERT INTO
-    contact_box (title, value, icon)
+INSERT INTO contact_box (lang_id, title, value, icon)
 VALUES
-    ('Address', 'Samarkand City', 'bi bi-geo-alt'),
-    (
-        'Contact Us',
-        '+998 99 779 93 33',
-        'bi bi-telephone'
-    ),
-    (
-        'Send Us an Email',
-        'iilhomjonov777@gmail.com',
-        'bi bi-envelope'
-    );
+    (1, 'Address', 'Samarkand City', 'bi bi-geo-alt'),
+    (1, 'Contact Us', '+998 99 779 93 33', 'bi bi-telephone'),
+    (1, 'Send Us an Email', 'iilhomjonov777@gmail.com', 'bi bi-envelope'),
+    (2, 'Адрес', 'Город Самарканд', 'bi bi-geo-alt'),
+    (2, 'Связаться с нами', '+998 99 779 93 33', 'bi bi-telephone'),
+    (2, 'Отправьте нам письмо', 'iilhomjonov777@gmail.com', 'bi bi-envelope'),
+    (3, 'Manzil', 'Samarqand Shahri', 'bi bi-geo-alt'),
+    (3, 'Biz bilan bog‘laning', '+998 99 779 93 33', 'bi bi-telephone'),
+    (3, 'Bizga Email yuboring', 'iilhomjonov777@gmail.com', 'bi bi-envelope');
+
 
 
 INSERT INTO
