@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     $data = ['category_name' => $category_name];
 
     $query->insert('category', $data);
-    header(header: "Location: " . $_SERVER['PHP_SELF']);
+    header( "Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
