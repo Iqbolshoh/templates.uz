@@ -446,16 +446,55 @@ VALUES
     (2, 1, 'Мы помогаем нашим клиентам открыть новые возможности.'),
     (3, 1, 'Biz mijozlarimizga yangi imkoniyatlarni kashf qilishda yordam beramiz.');
 
-INSERT INTO
-    bioServices (h2, p1, image, h3, p2)
+INSERT INTO service (lang_id, title, description, icon)
 VALUES
-    (
-        'Our Services',
-        'Our experience and skills help us to deliver the best projects to you.',
-        'skills.jpg',
-        'Our project Development Skills',
-        'We use modern technologies to create our projects.'
-    );
+    (1, 'Our Services', 'We provide tailored solutions for each client. Discover our reliable and effective services.', 'bi-activity'),
+    (2, 'Наши Услуги', 'Мы предоставляем индивидуальные решения для каждого клиента. Ознакомьтесь с нашими надежными и эффективными услугами.', 'bi-activity'),
+    (3, 'Bizning Xizmatlarimiz', 'Har bir mijoz uchun moslashtirilgan yechimlar taqdim etamiz. Ishonchli va samarali xizmatlarimiz bilan tanishing.', 'bi-activity'),
+
+    (1, 'Customized Solutions', 'Our services are designed to meet each client’s needs. We provide the best solution for you.', 'bi-broadcast'),
+    (2, 'Индивидуальные решения', 'Наши услуги разработаны с учетом потребностей каждого клиента. Мы предлагаем лучшее решение для вас.', 'bi-broadcast'),
+    (3, 'Maxsus Yechimlar', 'Xizmatlarimiz har bir mijozning ehtiyojlariga mos ravishda ishlab chiqilgan. Siz uchun eng yaxshi yechimni taqdim etamiz.', 'bi-broadcast'),
+
+    (1, 'Innovative Approaches', 'We solve your problems with innovative approaches. Every service offers creative solutions.', 'bi-easel'),
+    (2, 'Инновационные подходы', 'Мы решаем ваши проблемы с помощью инновационных подходов. Каждая услуга предлагает творческие решения.', 'bi-easel'),
+    (3, 'Innovatsion Yondashuvlar', 'Muammolaringizni innovatsion yondashuvlar orqali hal qilamiz. Har bir xizmat ijodiy yechimlar taklif etadi.', 'bi-easel'),
+
+    (1, 'Fast and Efficient Services', 'Our services are fast and efficient, with a strong focus on quality. Your needs come first.', 'bi-bounding-box-circles'),
+    (2, 'Быстрое и эффективное обслуживание', 'Наши услуги быстрые и эффективные, с акцентом на качество. Ваши потребности на первом месте.', 'bi-bounding-box-circles'),
+    (3, 'Tez va Samarali Xizmatlar', 'Xizmatlarimiz tez va samarali, sifatga kuchli e’tibor qaratiladi. Sizning ehtiyojlaringiz birinchi o‘rinda.', 'bi-bounding-box-circles'),
+
+    (1, 'Expert Advice', 'Our experts are ready to provide the best advice. Feel free to reach out with any questions or concerns.', 'bi-calendar4-week'),
+    (2, 'Экспертные консультации', 'Наши эксперты готовы предоставить лучшие советы. Не стесняйтесь обращаться с любыми вопросами или проблемами.', 'bi-calendar4-week'),
+    (3, 'Mutaxassis Maslahati', 'Bizning mutaxassislarimiz eng yaxshi maslahatlarni taqdim etishga tayyor. Har qanday savollar yoki muammolar bilan murojaat qiling.', 'bi-calendar4-week'),
+
+    (1, 'Client Communication', 'We maintain open and friendly communication with clients. Your feedback and suggestions are very important to us.', 'bi-chat-square-text'),
+    (2, 'Связь с клиентами', 'Мы поддерживаем открытую и дружелюбную коммуникацию с клиентами. Ваши отзывы и предложения очень важны для нас.', 'bi-chat-square-text'),
+    (3, 'Mijozlar Bilan Aloqa', 'Biz mijozlar bilan ochiq va do‘stona aloqa o‘rnatamiz. Sizning fikr-mulohazalaringiz va takliflaringiz biz uchun juda muhim.', 'bi-chat-square-text');
+
+INSERT INTO service_details (lang_id, title, description, image, subtitle, additional_info)
+VALUES
+    (1, 'Our Services', 'Our experience and skills help us to deliver the best projects to you.', 'skills.jpg', 'Our project Development Skills', 'We use modern technologies to create our projects.'),
+    (2, 'Наши Услуги', 'Наши опыт и навыки помогают нам предоставить вам лучшие проекты.', 'skills.jpg', 'Наши навыки разработки проектов', 'Мы используем современные технологии для создания наших проектов.'),
+    (3, 'Bizning Xizmatlarimiz', 'Bizning tajribamiz va malakalarimiz sizga eng yaxshi loyihalarni taqdim etishda yordam beradi.', 'skills.jpg', 'Bizning loyiha ishlab chiqish ko‘nikmalarimiz', 'Biz zamonaviy texnologiyalarni loyihalarimizni yaratish uchun ishlatamiz.');
+
+INSERT INTO team_services (lang_id, service_name, skill_level)
+VALUES
+    (1, 'Web Development', 90),
+    (1, 'Mobile Development', 85),
+    (1, 'Cybersecurity', 80),
+    (1, 'Database', 95),
+    (1, 'UI/UX Design', 75),
+    (2, 'Веб-разработка', 90),
+    (2, 'Мобильная разработка', 85),
+    (2, 'Кибербезопасность', 80),
+    (2, 'База данных', 95),
+    (2, 'UI/UX Дизайн', 75),
+    (3, 'Veb Rivojlantirish', 90),
+    (3, 'Mobil Dasturlash', 85),
+    (3, 'Kiberxavfsizlik', 80),
+    (3, 'Ma’lumotlar Bazasi', 95),
+    (3, 'UI/UX Dizayni', 75);
 
 INSERT INTO
     category (category_name)
@@ -490,14 +529,6 @@ VALUES
         'bi bi-envelope'
     );
 
-INSERT INTO
-    ourServices (service_name, skill_level)
-VALUES
-    ('Web Development', 90),
-    ('Mobile Development', 85),
-    ('Cybersecurity', 80),
-    ('Database', 95),
-    ('UI/UX Design', 75);
 
 INSERT INTO
     projects (category_id, project_name, link, description)
@@ -592,40 +623,6 @@ VALUES
     (12, 'books-3.jpg'),
     (1, 'product-1.jpg'),
     (1, 'branding-1.jpg');
-
-INSERT INTO
-    services (title, description, icon)
-VALUES
-    (
-        'Our Services',
-        'We provide tailored solutions for each client. Discover our reliable and effective services.',
-        'bi-activity'
-    ),
-    (
-        'Customized Solutions',
-        'Our services are designed to meet each client’s needs. We provide the best solution for you.',
-        'bi-broadcast'
-    ),
-    (
-        'Innovative Approaches',
-        'We solve your problems with innovative approaches. Every service offers creative solutions.',
-        'bi-easel'
-    ),
-    (
-        'Fast and Efficient Services',
-        'Our services are fast and efficient, with a strong focus on quality. Your needs come first.',
-        'bi-bounding-box-circles'
-    ),
-    (
-        'Expert Advice',
-        'Our experts are ready to provide the best advice. Feel free to reach out with any questions or concerns.',
-        'bi-calendar4-week'
-    ),
-    (
-        'Client Communication',
-        'We maintain open and friendly communication with clients. Your feedback and suggestions are very important to us.',
-        'bi-chat-square-text'
-    );
 
 INSERT INTO
     messages (name, email, subject, message, status)
