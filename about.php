@@ -42,9 +42,17 @@ foreach ($serviceItems as $item) {
   <meta property="og:title" content="About Us - Templates.uz">
   <meta property="og:description"
     content="Learn more about Templates.uz, a professional web development and IT services company.">
-  <meta property="og:image" content="https://templates.uz/assets/img/about.jpg">
-  <meta property="og:url" content="https://templates.uz/about">
+    <meta property="og:image" content="https://templates.uz/assets/img/iqbolshoh.jpg">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:url" content="https://templates.uz/about.php">
   <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Templates.uz - Web Development & IT Services">
+  <meta name="twitter:description" content="Web development, bot creation, and IT services for businesses.">
+  <meta name="twitter:image" content="https://templates.uz/assets/img/iqbolshoh.jpg">
   
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
