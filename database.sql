@@ -55,7 +55,9 @@ CREATE TABLE statistics (
     icon VARCHAR(50),
     count INT,
     title VARCHAR(100),
-    description VARCHAR(255)
+    description VARCHAR(255),
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id)
 );
 
 CREATE TABLE about_section (
