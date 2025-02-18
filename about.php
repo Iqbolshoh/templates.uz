@@ -35,7 +35,7 @@ foreach ($serviceItems as $item) {
   <meta name="description"
     content="Learn more about Templates.uz, a professional web development and IT services company dedicated to building high-quality digital solutions.">
   <meta name="keywords"
-    content="about templates.uz, web development, IT services, company, team, mission, vision, business, technology, software development, dasturlash jamoasi">
+    content="about templates.uz, web development, IT services, company, team, mission, vision, business, technology, software development, dasturlash jamoasi, Templates.uz, iqbolshoh.uz">
   <meta name="author" content="Templates.uz">
   <meta name="robots" content="index, follow">
 
