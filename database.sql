@@ -267,6 +267,64 @@ VALUES
     );
 
 INSERT INTO
+    features (lang_id, icon, title, description)
+VALUES
+    (
+        1,
+        'bi bi-bounding-box-circles',
+        'Innovative Solutions',
+        'Our innovative solutions can change your life.'
+    ),
+    (
+        2,
+        'bi bi-bounding-box-circles',
+        'Инновационные решения',
+        'Наши инновационные решения могут изменить вашу жизнь.'
+    ),
+    (
+        3,
+        'bi bi-bounding-box-circles',
+        'Innovatsion yechimlar',
+        'Bizning innovatsion yechimlarimiz hayotingizni o‘zgartirishi mumkin.'
+    ),
+    (
+        1,
+        'bi bi-calendar4-week',
+        'Free Consultations',
+        'Get free advice from our experts and grow.'
+    ),
+    (
+        2,
+        'bi bi-calendar4-week',
+        'Бесплатные консультации',
+        'Получите бесплатные советы от наших экспертов и развивайтесь.'
+    ),
+    (
+        3,
+        'bi bi-calendar4-week',
+        'Bepul maslahatlar',
+        'Bizning mutaxassislarimizdan bepul maslahatlar oling va rivojlaning.'
+    ),
+    (
+        1,
+        'bi bi-broadcast',
+        'Strong Network',
+        'Gain access to numerous opportunities through our network.'
+    ),
+    (
+        2,
+        'bi bi-broadcast',
+        'Сильная сеть',
+        'Получите доступ к множеству возможностей через нашу сеть.'
+    ),
+    (
+        3,
+        'bi bi-broadcast',
+        'Kuchli tarmoq',
+        'Bizning tarmog‘imiz orqali ko‘plab imkoniyatlarga ega bo‘ling.'
+    );
+
+INSERT INTO
     about (title, p1, p2, image)
 VALUES
     (
@@ -354,25 +412,6 @@ VALUES
         'Send Us an Email',
         'iilhomjonov777@gmail.com',
         'bi bi-envelope'
-    );
-
-INSERT INTO
-    features (icon, title, description)
-VALUES
-    (
-        'bi bi-bounding-box-circles',
-        'Innovative Solutions',
-        'Our innovative solutions can change your life.'
-    ),
-    (
-        'bi bi-calendar4-week',
-        'Free Consultations',
-        'Get free advice from our experts and grow.'
-    ),
-    (
-        'bi bi-broadcast',
-        'Strong Network',
-        'Gain access to numerous opportunities through our network.'
     );
 
 INSERT INTO
