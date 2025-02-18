@@ -15,7 +15,7 @@ if ($project) {
   $description = $project['description'];
   $keywords = 'web, development, project, IT, business, software, ' . $title;
   $image = !empty($project_images) ? "assets/img/projects/" . $project_images[0] : 'https://templates.uz/assets/img/iqbolshoh.jpg';
-  $project_link = $project['link'] ?? '#';
+  $project_link = $project['link'];
 }
 ?>
 
