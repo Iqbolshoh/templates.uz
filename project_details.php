@@ -13,7 +13,7 @@ if ($project) {
 
   $title = $project['project_name'] ?? 'Project Details';
   $description = $project['description'] ?? 'Discover our latest project.';
-  $keywords = $project['keywords'] ?? 'web, development, project, IT, business, software';
+  $keywords = 'web, development, project, IT, business, software';
   $image = !empty($project_images) ? "assets/img/projects/" . $project_images[0] : 'https://templates.uz/assets/img/iqbolshoh.jpg';
   $project_link = $project['link'] ?? '#';
 }
@@ -73,14 +73,14 @@ if ($project) {
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 600,
-                      "autoplay": { "delay": 5000 },
-                      "slidesPerView": "auto",
-                      "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                    }
-                  </script>
+                      {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": { "delay": 5000 },
+                        "slidesPerView": "auto",
+                        "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                      }
+                    </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
