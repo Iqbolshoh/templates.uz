@@ -59,9 +59,21 @@ if (
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Contact - Templates.uz</title>
+
+  <meta name="description"
+    content="Get in touch with Templates.uz. Contact us for web development, IT solutions, and business inquiries.">
+  <meta name="keywords"
+    content="contact, templates.uz, support, help, bog'lanish, email, phone, IT services, web development, mijozlarga xizmat ko'rsatish">
+  <meta name="author" content="Templates.uz">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Contact - Templates.uz">
+  <meta property="og:description" content="Get in touch with Templates.uz for web development and IT solutions.">
+  <meta property="og:image" content="https://templates.uz/assets/img/contact.jpg">
+  <meta property="og:url" content="https://templates.uz/contact">
+  <meta property="og:type" content="website">
+
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
