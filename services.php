@@ -12,9 +12,21 @@ $ourservices = $query->select('ourServices', '*');
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Services</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Services - Templates.uz</title>
+
+  <meta name="description"
+    content="Discover our wide range of web development, bot creation, and IT services at Templates.uz. We provide custom solutions for businesses.">
+  <meta name="keywords"
+    content="services, IT services, templates.uz, web development, bot creation, software, coding, dasturlash, biznes uchun xizmatlar, startup solutions">
+  <meta name="author" content="Templates.uz">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Services - Templates.uz">
+  <meta property="og:description" content="Explore Templates.uz services: web development, IT solutions, and more.">
+  <meta property="og:image" content="https://templates.uz/assets/img/services.jpg">
+  <meta property="og:url" content="https://templates.uz/services">
+  <meta property="og:type" content="website">
+
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
