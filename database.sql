@@ -1068,13 +1068,6 @@ INSERT INTO
     messages (name, email, subject, message, status)
 VALUES
     (
-        'Aliya Karimova',
-        'aliya.karimova@example.com',
-        'New Project',
-        'Hello Iqbolshoh, I am very interested in collaborating with you on a new project. Please let me know if we can discuss the details.',
-        'no_checked'
-    ),
-    (
         'Shodmon Abdurahimov',
         'shodmon.abdurahimov@example.com',
         'Code Review Request',
@@ -1086,12 +1079,5 @@ VALUES
         'kamola.ergasheva@example.com',
         'Platform Assistance',
         'Dear Iqbolshoh, I need some guidance with navigating your platform. Can you assist me with the features?',
-        'no_checked'
-    ),
-    (
-        'Farhod Yusupov',
-        'farhod.yusupov@example.com',
-        'Partnership Inquiry',
-        'Greetings Iqbolshoh, I am reaching out to explore a potential partnership between our teams. I believe we have mutual goals that can benefit us both. Looking forward to your response.',
         'no_checked'
     );
