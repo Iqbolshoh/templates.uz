@@ -23,9 +23,17 @@ $ourservices = $query->select('ourServices', '*');
 
   <meta property="og:title" content="Services - Templates.uz">
   <meta property="og:description" content="Explore Templates.uz services: web development, IT solutions, and more.">
-  <meta property="og:image" content="https://templates.uz/assets/img/services.jpg">
-  <meta property="og:url" content="https://templates.uz/services">
+  <meta property="og:image" content="https://templates.uz/assets/img/iqbolshoh.jpg">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:url" content="https://templates.uz/services.php">
   <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Templates.uz - Web Development & IT Services">
+  <meta name="twitter:description" content="Web development, bot creation, and IT services for businesses.">
+  <meta name="twitter:image" content="https://templates.uz/assets/img/iqbolshoh.jpg">
 
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
