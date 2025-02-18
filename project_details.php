@@ -27,6 +27,11 @@ $project_link = $project['link'] ?? '#';
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?= htmlspecialchars($title) ?> - Templates.uz</title>
 
+  <meta name="description" content="<?= htmlspecialchars($description) ?>">
+  <meta name="keywords" content="<?= htmlspecialchars($keywords) ?>">
+  <meta name="author" content="Templates.uz">
+  <meta name="robots" content="index, follow">
+
   <meta property="og:title" content="<?= htmlspecialchars($project[0]['project_name']); ?>">
   <meta property="og:description" content="<?= htmlspecialchars($project[0]['description']); ?>">
   <meta property="og:image" content="https://templates.uz/assets/img/projects/<?= $project_images[0]; ?>">
