@@ -2,7 +2,7 @@
 include './config.php';
 $query = new Database();
 $aboutData = $query->select('about', '*');
-$serviceItems  = $query->select('about_ul_items', '*');
+$serviceItems = $query->select('about_ul_items', '*');
 $statistics = $query->select('statistics', '*');
 
 // Prepare the about items array
@@ -30,14 +30,29 @@ foreach ($serviceItems as $item) {
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About Us</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>About Us - Templates.uz</title>
+
+  <meta name="description"
+    content="Learn more about Templates.uz, a professional web development and IT services company dedicated to building high-quality digital solutions.">
+  <meta name="keywords"
+    content="about templates.uz, web development, IT services, company, team, mission, vision, business, technology, software development, dasturlash jamoasi">
+  <meta name="author" content="Templates.uz">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="About Us - Templates.uz">
+  <meta property="og:description"
+    content="Learn more about Templates.uz, a professional web development and IT services company.">
+  <meta property="og:image" content="https://templates.uz/assets/img/about.jpg">
+  <meta property="og:url" content="https://templates.uz/about">
+  <meta property="og:type" content="website">
+  
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -98,11 +113,12 @@ foreach ($serviceItems as $item) {
 
         <div class="row gy-4">
 
-          <?php foreach ($statistics as $stat) : ?>
+          <?php foreach ($statistics as $stat): ?>
             <div class="col-lg-3 col-md-6">
               <div class="stats-item">
                 <i class="<?= $stat['icon'] ?>"></i>
-                <span data-purecounter-start="0" data-purecounter-end="<?= $stat['count'] ?>" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="<?= $stat['count'] ?>"
+                  data-purecounter-duration="1" class="purecounter"></span>
                 <p><strong><?= $stat['title'] ?></strong> <span><?= $stat['description'] ?></span></p>
               </div>
             </div><!-- Statistics Section Ends -->
@@ -118,7 +134,8 @@ foreach ($serviceItems as $item) {
 
 
   <!-- Scroll to Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
