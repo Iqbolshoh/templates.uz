@@ -32,79 +32,79 @@ CREATE TABLE IF NOT EXISTS active_sessions (
 
 CREATE TABLE banners (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     image VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     button_text VARCHAR(100) NOT NULL,
-    button_link VARCHAR(255) NOT NULL,
-    lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    button_link VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE features (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     icon VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL,
-    lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    description TEXT NOT NULL
 );
 
 CREATE TABLE statistics (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     icon VARCHAR(50),
     count INT,
     title VARCHAR(100),
-    description VARCHAR(255),
-    lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    description VARCHAR(255)
 );
 
 CREATE TABLE about_section (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     details TEXT NOT NULL,
-    image_url VARCHAR(255),
-    lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    image_url VARCHAR(255)
 );
 
 CREATE TABLE about_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     about_id INT,
     list_item TEXT NOT NULL,
-    FOREIGN KEY (about_id) REFERENCES about_section(id),
-    lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    FOREIGN KEY (about_id) REFERENCES about_section(id)
 );
 
 CREATE TABLE service (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
-    icon VARCHAR(50) NOT NULL,
-    lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    icon VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE service_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     image VARCHAR(255),
     subtitle TEXT NOT NULL,
-    additional_info TEXT NOT NULL,
-    lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    additional_info TEXT NOT NULL
 );
 
 CREATE TABLE team_services (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    service_name VARCHAR(255) NOT NULL,
-    skill_level INT NOT NULL,
     lang_id INT,
-    FOREIGN KEY (lang_id) REFERENCES languages(id)
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
+    service_name VARCHAR(255) NOT NULL,
+    skill_level INT NOT NULL
 );
 
 CREATE TABLE contact (
@@ -117,6 +117,8 @@ CREATE TABLE contact (
 
 CREATE TABLE contact_box (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     title VARCHAR(255),
     value VARCHAR(255),
     icon VARCHAR(255)
@@ -139,6 +141,8 @@ CREATE TABLE category (
 
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    lang_id INT,
+    FOREIGN KEY (lang_id) REFERENCES languages(id),
     category_id INT,
     project_name VARCHAR(255) NOT NULL,
     link VARCHAR(255) NOT NULL,
