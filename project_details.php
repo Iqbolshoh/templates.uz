@@ -27,19 +27,18 @@ $project_link = $project['link'] ?? '#';
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?= htmlspecialchars($title) ?> - Templates.uz</title>
 
-  <meta name="description" content="<?= htmlspecialchars($description) ?>">
-  <meta name="keywords" content="<?= htmlspecialchars($keywords) ?>">
-  <meta name="author" content="Templates.uz">
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="<?php echo htmlspecialchars($project[0]['project_name']); ?>">
-  <meta property="og:description" content="<?php echo htmlspecialchars($project[0]['description']); ?>">
-  <meta property="og:image" content="https://templates.uz/assets/img/projects/<?php echo $project_images[0]; ?>">
+  <meta property="og:title" content="<?= htmlspecialchars($project[0]['project_name']); ?>">
+  <meta property="og:description" content="<?= htmlspecialchars($project[0]['description']); ?>">
+  <meta property="og:image" content="https://templates.uz/assets/img/projects/<?= $project_images[0]; ?>">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
-  <meta property="og:url" content="https://templates.uz/project_details.php?id=<?php echo $id; ?>">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:url" content="https://templates.uz/project_details.php?id=<?= $id; ?>">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?= htmlspecialchars($project[0]['project_name']); ?>">
+  <meta name="twitter:description" content="<?= htmlspecialchars($project[0]['description']); ?>">
+  <meta name="twitter:image" content="https://templates.uz/assets/img/projects/<?= $project_images[0]; ?>">
 
   <link href="favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -98,14 +97,14 @@ $project_link = $project['link'] ?? '#';
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                                            {
-                                              "loop": true,
-                                              "speed": 600,
-                                              "autoplay": { "delay": 5000 },
-                                              "slidesPerView": "auto",
-                                              "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                                            }
-                                          </script>
+                                              {
+                                                "loop": true,
+                                                "speed": 600,
+                                                "autoplay": { "delay": 5000 },
+                                                "slidesPerView": "auto",
+                                                "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                                              }
+                                            </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
