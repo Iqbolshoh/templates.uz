@@ -552,31 +552,85 @@ VALUES
     );
 
 INSERT INTO
-    statistics (icon, count, title, description)
+    statistics (lang_id, icon, count, title, description)
 VALUES
     (
+        1,
         'bi bi-emoji-smile',
         232,
         'Happy Clients',
-        'our success'
+        'Our success'
     ),
     (
+        2,
+        'bi bi-emoji-smile',
+        232,
+        'Счастливые клиенты',
+        'Наш успех'
+    ),
+    (
+        3,
+        'bi bi-emoji-smile',
+        232,
+        'Baxtli mijozlar',
+        'Bizning muvaffaqiyatimiz'
+    ),
+    (
+        1,
         'bi bi-journal-richtext',
         521,
         'Projects',
-        'our creativity'
+        'Our creativity'
     ),
     (
+        2,
+        'bi bi-journal-richtext',
+        521,
+        'Проекты',
+        'Наше творчество'
+    ),
+    (
+        3,
+        'bi bi-journal-richtext',
+        521,
+        'Loyihalar',
+        'Bizning ijodkorligimiz'
+    ),
+    (
+        1,
         'bi bi-headset',
         1453,
         'Support Hours',
-        'we are always there for clients'
+        'We are always there for clients'
     ),
     (
+        2,
+        'bi bi-headset',
+        1453,
+        'Часы поддержки',
+        'Мы всегда рядом с клиентами'
+    ),
+    (
+        3,
+        'bi bi-headset',
+        1453,
+        'Qo‘llab-quvvatlash soatlari',
+        'Biz mijozlar uchun har doim mavjudmiz'
+    ),
+    (1, 'bi bi-people', 32, 'Workers', 'Our team'),
+    (
+        2,
         'bi bi-people',
         32,
-        'Workers',
-        'our team'
+        'Работники',
+        'Наша команда'
+    ),
+    (
+        3,
+        'bi bi-people',
+        32,
+        'Ishchilar',
+        'Bizning jamoamiz'
     );
 
 INSERT INTO
