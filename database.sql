@@ -2,6 +2,11 @@ CREATE DATABASE templates;
 
 USE templates;
 
+CREATE TABLE languages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    language VARCHAR(100) NOT NULL UNIQUE
+);
+
 CREATE TABLE IF NOT EXISTS users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
