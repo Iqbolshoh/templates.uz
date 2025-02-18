@@ -4,7 +4,7 @@ USE templates;
 
 CREATE TABLE languages (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    language VARCHAR(100) NOT NULL UNIQUE
+    language_name VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS users (
