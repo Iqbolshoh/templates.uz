@@ -58,29 +58,6 @@ if ($project) {
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
-<style>
-  .project-not-found {
-    min-height: 30vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-  }
-
-  .project-not-found h3 {
-    font-size: 24px;
-    color: #dc3545;
-    margin-bottom: 10px;
-  }
-
-  .project-not-found p {
-    font-size: 18px;
-    color: #6c757d;
-  }
-</style>
 
 <body class="portfolio-details-page">
   <?php include 'includes/header.php'; ?>
@@ -101,18 +78,17 @@ if ($project) {
     <section id="portfolio-details" class="portfolio-details section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4">
-          <?php if ($project): ?>
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 600,
-                      "autoplay": { "delay": 5000 },
-                      "slidesPerView": "auto",
-                      "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                    }
-                  </script>
+                      {
+                        "loop": true,
+                        "speed": 600,
+                        "autoplay": { "delay": 5000 },
+                        "slidesPerView": "auto",
+                        "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                      }
+                    </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
@@ -144,14 +120,6 @@ if ($project) {
                 <p><?= htmlspecialchars($title) ?> – <?= htmlspecialchars($description) ?></p>
               </div>
             </div>
-          <?php else: ?>
-            <div class="col-12 project-not-found">
-              <div>
-                <h3>Project not found</h3>
-                <p>The project you are looking for does not exist.</p>
-              </div>
-            </div>
-          <?php endif; ?>
         </div>
       </div>
     </section>
