@@ -179,9 +179,92 @@ VALUES
 INSERT INTO
     languages (language_name)
 VALUES
-    ('Uz'),
+    ('Eng'),
     ('Ru'),
-    ('Eng');
+    ('Uz');
+
+INSERT INTO
+    banners (
+        lang_id,
+        image,
+        title,
+        description,
+        button_text,
+        button_link
+    )
+VALUES
+    (
+        1,
+        'hero-carousel-1.jpg',
+        'Welcome to Iqbolshoh',
+        'Modern Web-Sites Creation',
+        'Start',
+        'about.php'
+    ),
+    (
+        2,
+        'hero-carousel-1.jpg',
+        'Добро пожаловать в Икболшох',
+        'Создание современных веб-сайтов',
+        'Начать',
+        'about.php'
+    ),
+    (
+        3,
+        'hero-carousel-1.jpg',
+        'Iqbolshoh ga xush kelibsiz',
+        'Zamonaviy veb-saytlar yaratish',
+        'Boshlash',
+        'about.php'
+    ),
+    (
+        1,
+        'hero-carousel-2.jpg',
+        'Change Your Life with Us',
+        'Grow yourself with new ideas and creative solutions.',
+        'Start',
+        'about.php'
+    ),
+    (
+        2,
+        'hero-carousel-2.jpg',
+        'Измените свою жизнь с нами',
+        'Развивайтесь с новыми идеями и креативными решениями.',
+        'Начать',
+        'about.php'
+    ),
+    (
+        3,
+        'hero-carousel-2.jpg',
+        'Hayotingizni biz bilan o‘zgartiring',
+        'Yangi g‘oyalar va kreativ yechimlar bilan o‘zingizni rivojlantiring.',
+        'Boshlash',
+        'about.php'
+    ),
+    (
+        1,
+        'hero-carousel-3.jpg',
+        'Our Offers',
+        'We offer the best services for you.',
+        'Start',
+        'about.php'
+    ),
+    (
+        2,
+        'hero-carousel-3.jpg',
+        'Наши предложения',
+        'Мы предлагаем лучшие услуги для вас.',
+        'Начать',
+        'about.php'
+    ),
+    (
+        3,
+        'hero-carousel-3.jpg',
+        'Bizning takliflarimiz',
+        'Biz sizga eng yaxshi xizmatlarni taqdim etamiz.',
+        'Boshlash',
+        'about.php'
+    );
 
 INSERT INTO
     about (title, p1, p2, image)
@@ -227,37 +310,6 @@ VALUES
     (
         1,
         'We help our clients unlock new opportunities.'
-    );
-
-INSERT INTO
-    banners (
-        image,
-        title,
-        description,
-        button_text,
-        button_link
-    )
-VALUES
-    (
-        'hero-carousel-1.jpg',
-        'Welcome to Iqbolshoh',
-        'Modern Web-Sites Creation',
-        'Start',
-        'about.php'
-    ),
-    (
-        'hero-carousel-2.jpg',
-        'Change Your Life with Us',
-        'Grow yourself with new ideas and creative solutions.',
-        'Start',
-        'about.php'
-    ),
-    (
-        'hero-carousel-3.jpg',
-        'Our Offers',
-        'We offer the best services for you.',
-        'Start',
-        'about.php'
     );
 
 INSERT INTO
