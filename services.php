@@ -26,7 +26,7 @@ $ourservices = $query->select('ourServices', '*');
   <meta property="og:image" content="https://templates.uz/assets/img/templates.png">
   <meta property="og:image:width" content="1920">
   <meta property="og:image:height" content="1080">
-  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:type" content="image/image/png">
   <meta property="og:url" content="https://templates.uz/services.php">
   <meta property="og:type" content="website">
 
