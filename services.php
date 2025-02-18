@@ -29,7 +29,6 @@ $ourservices = $query->select('ourServices', '*');
   <meta property="og:image:type" content="image/image/png">
   <meta property="og:url" content="https://templates.uz/services.php">
   <meta property="og:type" content="website">
-
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Templates.uz - Web Development & IT Services">
   <meta name="twitter:description" content="Web development, bot creation, and IT services for businesses.">
