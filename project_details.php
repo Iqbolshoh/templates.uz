@@ -11,11 +11,11 @@ if ($project) {
   $project_images = $query->select('project_images', '*', 'project_id = ?', [$id], 'i');
   $project_images = !empty($project_images) ? array_column($project_images, 'image_url') : [];
 
-  $title = $project['project_name'];
-  $description = $project['description'];
+  $title = $project['project_name'] ?? 'Project Details';
+  $description = $project['description'] ?? 'Discover our latest project.';
   $keywords = 'web, development, project, IT, business, software, ' . $title;
   $image = !empty($project_images) ? "assets/img/projects/" . $project_images[0] : 'https://templates.uz/assets/img/iqbolshoh.jpg';
-  $project_link = $project['link'];
+  $project_link = $project['link'] ?? '#';
 }
 ?>
 
@@ -49,6 +49,29 @@ if ($project) {
   <meta property="og:url" content="https://templates.uz/project.php?id=<?= $id ?>">
   <meta property="og:type" content="website">
 </head>
+<style>
+  .project-not-found {
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .project-not-found h3 {
+    font-size: 24px;
+    color: #dc3545;
+    margin-bottom: 10px;
+  }
+
+  .project-not-found p {
+    font-size: 18px;
+    color: #6c757d;
+  }
+</style>
 
 <body class="portfolio-details-page">
   <?php include 'includes/header.php'; ?>
@@ -73,14 +96,14 @@ if ($project) {
             <div class="col-lg-8">
               <div class="portfolio-details-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
-                          {
-                            "loop": true,
-                            "speed": 600,
-                            "autoplay": { "delay": 5000 },
-                            "slidesPerView": "auto",
-                            "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                          }
-                        </script>
+                        {
+                          "loop": true,
+                          "speed": 600,
+                          "autoplay": { "delay": 5000 },
+                          "slidesPerView": "auto",
+                          "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                        }
+                      </script>
                 <div class="swiper-wrapper align-items-center">
                   <?php foreach ($project_images as $image): ?>
                     <div class="swiper-slide">
