@@ -32,7 +32,7 @@ if (!empty($_COOKIE['username'])) {
                 "active_sessions",
                 ['last_activity' => date('Y-m-d H:i:s')],
                 "session_token = ?",
-                [$session_token],
+                [session_id()],
                 "s"
             );
         }
