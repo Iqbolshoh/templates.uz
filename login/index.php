@@ -145,7 +145,7 @@ if (
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../src/css/login_signup.css">
+    <link rel="stylesheet" href="../assets/css/login_signup.css">
 </head>
 
 <body>
