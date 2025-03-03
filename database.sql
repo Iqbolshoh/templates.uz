@@ -166,6 +166,12 @@ VALUES
     ('Ru'),
     ('Uz');
 
+-- ==============================  
+-- 📥 DATA INSERTION (COMPLETE)  
+-- ==============================  
+-- DEFAULT PASSWORD: "IQBOLSHOH" (HASHED FOR SECURITY)  
+-- ==============================  
+
 INSERT INTO
     users (
         first_name,
@@ -181,7 +187,7 @@ VALUES
         'Ilhomjonov',
         'iilhomjonov777@gmail.com',
         'iqbolshoh',
-        '1f254bb82e64bde20137a2922989f6f57529c98e34d146b523a47898702b7231',
+        '52be5ff91284c65bac56f280df55f797a5c505f7ef66317ff358e34791507027',
         'admin'
     );
 
