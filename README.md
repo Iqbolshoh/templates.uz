@@ -15,6 +15,10 @@ The `templates.uz` is a business website template created using PHP and HTML/CSS
 The admin panel is user-friendly and allows you to manage all aspects of your website. You can change text, update images, and manage your portfolio items seamlessly. This feature is designed for users who may not have coding experience but want to keep their website up-to-date easily.
 
 ![Admin Panel](https://github.com/Iqbolshoh/templates.uz/blob/main/assets/img/admin-panel-1.png)
+- **🖥 Admin Login:** `iqbolshoh`  
+- **👤 User Login:** `user`  
+- **🔑 Password:** `IQBOLSHOH`  
+
 
 ### Admin Panel Features:
 - Content Management: Easily update text, images, and other site elements.
