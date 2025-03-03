@@ -159,13 +159,6 @@ CREATE TABLE project_images (
     FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
 );
 
-INSERT INTO
-    languages (language_name)
-VALUES
-    ('Eng'),
-    ('Ru'),
-    ('Uz');
-
 -- ==============================  
 -- 📥 DATA INSERTION (COMPLETE)  
 -- ==============================  
@@ -190,6 +183,13 @@ VALUES
         '52be5ff91284c65bac56f280df55f797a5c505f7ef66317ff358e34791507027',
         'admin'
     );
+
+INSERT INTO
+    languages (language_name)
+VALUES
+    ('Eng'),
+    ('Ru'),
+    ('Uz');
 
 INSERT INTO
     banners (
