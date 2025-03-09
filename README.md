@@ -18,7 +18,9 @@ The **admin panel** is designed for easy management, even for users **without co
 
 ![🛠️ Admin Panel](https://github.com/Iqbolshoh/templates.uz/blob/main/assets/img/admin-panel-1.png)  
 🖥 **Admin Login:** `iqbolshoh`  
-🔑 **Password:** `IQBOLSHOH`  
+🔑 **Password:** `IQBOLSHOH` 
+
+---
 
 ### ⚙️ **Admin Panel Features:**  
 ✅ **📄 Content Management** – Easily update text, images, and other site elements.  
