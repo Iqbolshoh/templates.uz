@@ -94,26 +94,22 @@ if (
                                         <div class="mb-3">
                                             <label class="form-label">First Name</label>
                                             <input type="text" name="first_name" class="form-control"
-                                                value="<?php echo htmlspecialchars($user['first_name']); ?>"
-                                                maxlength="30" required>
+                                                value="<?php echo htmlspecialchars($user['first_name']); ?>" required>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Last Name</label>
                                             <input type="text" name="last_name" class="form-control"
-                                                value="<?php echo htmlspecialchars($user['last_name']); ?>"
-                                                maxlength="30" required>
+                                                value="<?php echo htmlspecialchars($user['last_name']); ?>" required>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Email</label>
                                             <input type="email" class="form-control"
-                                                value="<?php echo htmlspecialchars($user['email']); ?>" maxlength="100"
-                                                disabled>
+                                                value="<?php echo htmlspecialchars($user['email']); ?>" disabled>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Username</label>
                                             <input type="text" class="form-control"
-                                                value="<?php echo htmlspecialchars($user['username']); ?>"
-                                                maxlength="30" disabled>
+                                                value="<?php echo htmlspecialchars($user['username']); ?>" disabled>
                                         </div>
                                         <div class="mb-3 position-relative">
                                             <label class="form-label">Password</label>
@@ -153,7 +149,8 @@ if (
                                         </div>
                                         <div class="d-grid">
                                             <button type="submit" name="submit" id="submit"
-                                                class="btn btn-primary w-100">Update Profile</button>
+                                                class="btn btn-primary w-100">Update
+                                                Profile</button>
                                         </div>
                                     </form>
                                 </div>
